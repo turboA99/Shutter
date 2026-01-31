@@ -678,9 +678,37 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 789105605068710449, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1165294558552161470, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3036808972239378723, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4097083653130763843, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4193041270315908262, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112012704012055805, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6462403631131262574, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
       propertyPath: m_Name
       value: Tutorial
+      objectReference: {fileID: 0}
+    - target: {fileID: 8663671332270799935, guid: b84dafc5e0e5d7843b3a292a712d19ab, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
