@@ -8,6 +8,22 @@ namespace UI
     [RequireComponent(typeof(Image))]
     public class AlertIndicator : MonoBehaviour
     {
+        enum State
+        {
+            None,
+            Low,
+            MediumLow,
+            Medium,
+            TooLoud,
+            Danger
+        }
+        [FormerlySerializedAs("shakeLevelTooMuch")]
+        [SerializeField]
+        Shake shakeLevelTooLoud;
+
+        [SerializeField]
+        Shake shakeLevelDanger;
+
         [SerializeField] [Range(0f, 1f)]
         float levelLowThreshold = .1f;
 
@@ -17,8 +33,9 @@ namespace UI
         [SerializeField] [Range(0f, 1f)]
         float levelMediumThreshold = .5f;
 
+        [FormerlySerializedAs("levelTooMuchThreshold")]
         [SerializeField] [Range(0f, 1f)]
-        float levelTooMuchThreshold = .7f;
+        float levelTooLoudThreshold = .7f;
 
         [SerializeField] [Range(0f, 1f)]
         float levelDangerThreshold = .95f;
@@ -32,57 +49,124 @@ namespace UI
         [SerializeField]
         Sprite spriteLevelMedium;
 
+        [FormerlySerializedAs("spriteLevelTooMuch")]
         [SerializeField]
-        Sprite spriteLevelTooMuch;
+        Sprite spriteLevelTooLoud;
 
         [SerializeField]
         float maxLoudness = 100;
-        
-        float _currentLoudness = 0;
+
+        float _currentLoudness;
 
         Image _image;
+        Animator _animator;
+        State _currentState = State.None;
 
         void Awake()
         {
             _image = GetComponent<Image>();
+            _animator = GetComponent<Animator>();
+        }
+
+        void Start()
+        {
+            UpdateLoudness(_currentLoudness);
         }
 
         void UpdateSprite()
         {
             var progress = _currentLoudness / maxLoudness;
-            if (progress < levelLowThreshold)
+            //Image graphic
+            switch (_currentState)
             {
-                _image.color = new Color(1, 1, 1, 0);
+                case State.None:
+                    _image.enabled = false;
+                    break;
+                default:
+                    _image.enabled = true;
+                    break;
             }
-            else
+            //Sprite
+            switch (_currentState)
             {
-                _image.color = new Color(1, 1, 1, 1);
+
+                case State.None:
+                    break;
+                case State.Low:
+                    _image.sprite = spriteLevelLow;
+                    break;
+                case State.MediumLow:
+                    _image.sprite = spriteLevelMediumLow;
+                    break;
+                case State.Medium:
+                    _image.sprite = spriteLevelMedium;
+                    break;
+                case State.TooLoud:
+                    _image.sprite = spriteLevelTooLoud;
+                    break;
+                case State.Danger:
+                    
+                    break;
+                default:
+                    throw new ArgumentOutOfRangeException();
             }
-            if (progress >= levelLowThreshold && progress < levelMediumLowThreshold)
+            //Color
+            switch (_currentState)
             {
-                _image.sprite = spriteLevelLow;
+                case State.Danger:
+                    _image.color = Color.red;
+                    break;
+                default:
+                    _image.color = Color.white;
+                    break;
             }
-            else if (progress >= levelMediumLowThreshold && progress < levelMediumThreshold)
+            //Shake
+            switch (_currentState)
             {
-                _image.sprite = spriteLevelMediumLow;
-            }
-            else if (progress >= levelMediumThreshold && progress < levelTooMuchThreshold)
-            {
-                _image.sprite = spriteLevelMedium;
-            }
-            else if (progress >= levelTooMuchThreshold)
-            {
-                _image.sprite = spriteLevelTooMuch;
-            }
-            if (progress >= levelDangerThreshold)
-            {
-                _image.color = new Color(1, 0, 0, 0);
+                case State.TooLoud:
+                    shakeLevelDanger.enabled = false;
+                    shakeLevelTooLoud.enabled = true;
+                    break;
+                case State.Danger:
+                    shakeLevelTooLoud.enabled = false;
+                    shakeLevelDanger.enabled = true;
+                    break;
+                default:
+                    shakeLevelTooLoud.enabled = false;
+                    shakeLevelDanger.enabled = false;
+                    break;
             }
         }
 
         public void UpdateLoudness(float loudness)
         {
             _currentLoudness = loudness;
+            var progress = _currentLoudness / maxLoudness;
+            if (progress < levelLowThreshold)
+            {
+                _currentState = State.None;
+            }
+            else if (progress >= levelLowThreshold && progress < levelMediumLowThreshold)
+            {
+                _currentState = State.Low;
+            }
+            else if (progress >= levelMediumLowThreshold && progress < levelMediumThreshold)
+            {
+                _currentState = State.MediumLow;
+            }
+            else if (progress >= levelMediumThreshold && progress < levelTooLoudThreshold)
+            {
+                _currentState = State.Medium;
+            }
+            else if (progress >= levelTooLoudThreshold &&  progress < levelDangerThreshold)
+            {
+                _currentState = State.TooLoud;
+            } 
+            else if (progress >= levelDangerThreshold)
+            {
+                _currentState = State.Danger;
+            }
+            
             UpdateSprite();
         }
     }

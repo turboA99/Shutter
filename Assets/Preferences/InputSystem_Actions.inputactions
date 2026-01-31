@@ -9,7 +9,7 @@
                 {
                     "name": "Interact",
                     "type": "Button",
-                    "id": "77abae9e-ad7b-4fb3-ad15-c60e07581d68",
+                    "id": "38daae6c-65ba-4f1e-9af8-70693730b7a1",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -19,7 +19,7 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "1b842988-0828-449b-8fef-69ccf2dbbd84",
+                    "id": "f0530308-cab3-4513-9db4-341c70c0c90f",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
@@ -30,19 +30,8 @@
                 },
                 {
                     "name": "",
-                    "id": "ab15ea65-81f1-40a6-9137-70aece2c80f5",
-                    "path": "<XInputController>/buttonSouth",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Interact",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "92316928-79d6-4819-b933-3fc697e9fe20",
-                    "path": "<DualShockGamepad>/buttonSouth",
+                    "id": "aa7466b0-d41f-4710-92cd-5b2f5dc26ddd",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -69,7 +58,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "7607c7b6-cd76-4816-beef-bd0341cfe950",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -78,7 +67,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "15cef263-9014-4fd5-94d9-4e4a6234a6ef",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -142,6 +131,51 @@
                     "type": "PassThrough",
                     "id": "9caa3d8a-6b2f-4e8e-8bad-6ede561bd9be",
                     "expectedControlType": "Quaternion",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VirtualCursorPoint",
+                    "type": "Value",
+                    "id": "5da79597-d6bc-49f0-b3c1-402f3cdc65bd",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "VirtualCursorScroll",
+                    "type": "Value",
+                    "id": "ea7bfbdf-156c-4923-9ab1-0ae35a5fd134",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "VirtualCursorLeftButton",
+                    "type": "Button",
+                    "id": "21e09309-391e-415d-8c7e-352a21d31cd6",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VirtualCursorRightButton",
+                    "type": "Button",
+                    "id": "23a67b49-0608-4a66-b803-cd381dbae446",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "VirtualCursorBack",
+                    "type": "Button",
+                    "id": "a0ec94db-8a4e-4b51-a4c0-9e533639dfb5",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -415,21 +449,43 @@
                 {
                     "name": "",
                     "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
-                    "path": "*/{Submit}",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+                    "groups": "Keyboard&Mouse;Joystick;XR",
                     "action": "Submit",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
-                    "path": "*/{Cancel}",
+                    "id": "81141761-ac80-485c-993b-e5cc195217d5",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR",
+                    "groups": ";Gamepad;XboxController;PlaystationController",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3790c2b5-f344-41b9-95e3-9b00ddf254f7",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3bc924c0-3cd4-4182-8e30-791dc3d10c60",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;XboxController;PlaystationController",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -440,7 +496,7 @@
                     "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "Keyboard&Mouse;XboxController;PlaystationController;Gamepad",
                     "action": "Point",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -473,7 +529,7 @@
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
+                    "groups": ";Keyboard&Mouse;XboxController;PlaystationController;Gamepad",
                     "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -528,7 +584,29 @@
                     "path": "<Mouse>/rightButton",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse",
+                    "groups": "Keyboard&Mouse;XboxController;PlaystationController;Gamepad",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "05063ae8-4fc2-43ba-99a2-56ffe68285d3",
+                    "path": "<XInputController>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "2f0464b8-886a-4ed5-899d-c76871b85f2c",
+                    "path": "<DualShockGamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
                     "action": "RightClick",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -565,6 +643,61 @@
                     "action": "TrackedDeviceOrientation",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0426c103-e8d5-40e6-a0d3-1b3a2fd87ab2",
+                    "path": "<Gamepad>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VirtualCursorPoint",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5b9666c0-b17b-48a1-b7d8-a3facdebac59",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VirtualCursorScroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "91aea9e2-734c-4a60-89ea-e7d41c44a968",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VirtualCursorLeftButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "9c314739-a505-4275-94fc-15c860e61375",
+                    "path": "<Gamepad>/buttonNorth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VirtualCursorRightButton",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "24c4a91b-55ef-4e52-bfa6-85282e2fc3e5",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "VirtualCursorBack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -594,6 +727,11 @@
                     "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
+                },
+                {
+                    "devicePath": "<VirtualMouse>",
+                    "isOptional": false,
+                    "isOR": false
                 }
             ]
         },
@@ -616,6 +754,11 @@
                     "devicePath": "<XInputController>",
                     "isOptional": false,
                     "isOR": false
+                },
+                {
+                    "devicePath": "<VirtualMouse>",
+                    "isOptional": true,
+                    "isOR": false
                 }
             ]
         },
@@ -626,6 +769,11 @@
                 {
                     "devicePath": "<DualShockGamepad>",
                     "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<VirtualMouse>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]

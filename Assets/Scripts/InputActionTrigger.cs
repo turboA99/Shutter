@@ -5,9 +5,17 @@ using UnityEngine.InputSystem;
 
 public class InputActionTrigger : MonoBehaviour
 {
+    enum ActionType
+    {
+        Started,
+        Cancelled,
+        Performed
+    }
     [SerializeField]
     InputActionReference inputActionReference;
-
+    [SerializeField]
+    ActionType actionType = ActionType.Started;
+    
     [SerializeField]
     UnityEvent eventToTrigger;
 
@@ -25,11 +33,37 @@ public class InputActionTrigger : MonoBehaviour
 
     void OnEnable()
     {
-        _inputAction.started += OnTriggered;
+        switch (actionType)
+        {
+            case ActionType.Started:
+                _inputAction.started += OnTriggered;
+                break;
+            case ActionType.Cancelled:
+                _inputAction.canceled += OnTriggered;
+                break;
+            case ActionType.Performed:
+                _inputAction.performed += OnTriggered;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 
     void OnDisable()
     {
-        _inputAction.started -= OnTriggered;
+        switch (actionType)
+        {
+            case ActionType.Started:
+                _inputAction.started -= OnTriggered;
+                break;
+            case ActionType.Cancelled:
+                _inputAction.canceled -= OnTriggered;
+                break;
+            case ActionType.Performed:
+                _inputAction.performed -= OnTriggered;
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
     }
 }

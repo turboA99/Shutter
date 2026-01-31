@@ -29,6 +29,8 @@ namespace UI
         [Header("Sound")]
         [SerializeField] [Tooltip("The sound played typing")]
         AudioClip typingSound;
+        [SerializeField] [Tooltip("The frequency of typing sound being played")]
+        int playFrequency = 2;
 
         TextMeshProUGUI _tmpText;
         AudioSource _audioSource;
@@ -41,6 +43,7 @@ namespace UI
     
 
         string _text;
+        int _rememberFrequencyIndex;
 
         SimpleAnimation _animation;
 
@@ -60,7 +63,11 @@ namespace UI
                     _animation = new SimpleAnimation(_animationDuration, progress =>
                     {
                         var lastCharIndex = (int)(progress * _characterCount); 
-                        if (typingSound && _tmpText.maxVisibleCharacters != lastCharIndex) _audioSource.PlayOneShot(typingSound);
+                        if (typingSound && _tmpText.maxVisibleCharacters >= playFrequency + _rememberFrequencyIndex)
+                        {
+                            _rememberFrequencyIndex = lastCharIndex;
+                            _audioSource.PlayOneShot(typingSound);
+                        }
                         _tmpText.maxVisibleCharacters = lastCharIndex;
                     }, OnAnimationFinished.Invoke);
                     break;
@@ -70,7 +77,11 @@ namespace UI
                     _animation = new SimpleAnimation(_animationDuration, progress =>
                     {
                         var lastWorldIndex = (int)(progress * _wordCount); 
-                        if (typingSound && _tmpText.maxVisibleWords != lastWorldIndex) _audioSource.PlayOneShot(typingSound);
+                        if (typingSound && _tmpText.maxVisibleWords >= playFrequency + _rememberFrequencyIndex)
+                        {
+                            _rememberFrequencyIndex = lastWorldIndex;
+                            _audioSource.PlayOneShot(typingSound);
+                        }
                         _tmpText.maxVisibleWords = lastWorldIndex;
                     }, OnAnimationFinished.Invoke);
                     break;
@@ -80,7 +91,11 @@ namespace UI
                     _animation = new SimpleAnimation(_animationDuration, progress =>
                     {
                         var lastLineIndex = (int)(progress * _lineCount); 
-                        if (typingSound && _tmpText.maxVisibleLines != lastLineIndex) _audioSource.PlayOneShot(typingSound);
+                        if (typingSound && _tmpText.maxVisibleLines >= playFrequency + _rememberFrequencyIndex)
+                        {
+                            _rememberFrequencyIndex = lastLineIndex;
+                            _audioSource.PlayOneShot(typingSound);
+                        }
                         _tmpText.maxVisibleLines = lastLineIndex;
                     }, OnAnimationFinished.Invoke);
                     break;

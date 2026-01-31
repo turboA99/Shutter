@@ -12,6 +12,9 @@ GameObject:
   - component: {fileID: 5030822558087303253}
   - component: {fileID: 2846380291364487254}
   - component: {fileID: 1648184651539150837}
+  - component: {fileID: 1707364535389908335}
+  - component: {fileID: 4538872149998746580}
+  - component: {fileID: 3543276513568747323}
   m_Layer: 5
   m_Name: Loudness Indicator
   m_TagString: Untagged
@@ -88,6 +91,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd4f8ba292f6df44aba3cdd19fcd7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlertIndicator
+  shakeLevelTooLoud: {fileID: 4538872149998746580}
+  shakeLevelDanger: {fileID: 3543276513568747323}
   levelLowThreshold: 0.1
   levelMediumLowThreshold: 0.3
   levelMediumThreshold: 0.5
@@ -96,5 +101,57 @@ MonoBehaviour:
   spriteLevelLow: {fileID: -7043558261785099754, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   spriteLevelMediumLow: {fileID: -326175143475976935, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   spriteLevelMedium: {fileID: 8145313310028506312, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
-  spriteLevelTooMuch: {fileID: -8179030732515529359, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
+  spriteLevelTooLoud: {fileID: -8179030732515529359, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   maxLoudness: 100
+--- !u!95 &1707364535389908335
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494916723886573724}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7abbb6989a16b834d85d1c39cc6be49f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4538872149998746580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494916723886573724}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b914ac5e50f8ed4bbb207bee342e9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Shake
+  shakeDistance: 0.1
+  durationBetweenShakes: 0.1
+  doRandomizeDelay: 0
+--- !u!114 &3543276513568747323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5494916723886573724}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b914ac5e50f8ed4bbb207bee342e9af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UI.Shake
+  shakeDistance: 0.2
+  durationBetweenShakes: 0.1
+  doRandomizeDelay: 0
