@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -24,5 +25,10 @@ public class EventSequence : MonoBehaviour
         {
             OnEventSequenceFinished?.Invoke();
         }
+    }
+
+    void Start()
+    {
+        
     }
 }
