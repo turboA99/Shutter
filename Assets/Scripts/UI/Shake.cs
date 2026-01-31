@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
 namespace UI
@@ -20,6 +22,11 @@ namespace UI
 
         void OnEnable()
         {
+            Initialize();
+        }
+
+        void Initialize()
+        {
             _initialPosition = transform.position;
             _delay = Random.Range(0f, durationBetweenShakes);
             if (doRandomizeDelay) _previousShakeTime = Time.time - _delay;
@@ -28,6 +35,7 @@ namespace UI
 
         void Update()
         {
+            
             var timeDifference = Time.time - _previousShakeTime;
             if (timeDifference >= durationBetweenShakes)
             {

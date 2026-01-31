@@ -5,17 +5,19 @@ using UnityEngine.InputSystem;
 
 public class InputActionTrigger : MonoBehaviour
 {
-    enum ActionType
+    [Flags] enum ActionType
     {
         Started,
         Cancelled,
         Performed
     }
+
     [SerializeField]
     InputActionReference inputActionReference;
+
     [SerializeField]
-    ActionType actionType = ActionType.Started;
-    
+    ActionType actionType = ActionType.Started | ActionType.Cancelled | ActionType.Performed;
+
     [SerializeField]
     UnityEvent eventToTrigger;
 
@@ -28,42 +30,41 @@ public class InputActionTrigger : MonoBehaviour
 
     void OnTriggered(InputAction.CallbackContext context)
     {
-        eventToTrigger?.Invoke();
+        if (context.ReadValueAsButton())
+        {
+            eventToTrigger?.Invoke();
+        }
     }
 
     void OnEnable()
     {
-        switch (actionType)
+        if (actionType.HasFlag(ActionType.Started))
         {
-            case ActionType.Started:
-                _inputAction.started += OnTriggered;
-                break;
-            case ActionType.Cancelled:
-                _inputAction.canceled += OnTriggered;
-                break;
-            case ActionType.Performed:
-                _inputAction.performed += OnTriggered;
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+            _inputAction.started += OnTriggered;
+        }
+        if (actionType.HasFlag(ActionType.Cancelled))
+        {
+            _inputAction.canceled += OnTriggered;
+        }
+        if (actionType.HasFlag(ActionType.Performed))
+        {
+            _inputAction.performed += OnTriggered;
         }
     }
 
     void OnDisable()
     {
-        switch (actionType)
+        if (actionType.HasFlag(ActionType.Started))
         {
-            case ActionType.Started:
-                _inputAction.started -= OnTriggered;
-                break;
-            case ActionType.Cancelled:
-                _inputAction.canceled -= OnTriggered;
-                break;
-            case ActionType.Performed:
-                _inputAction.performed -= OnTriggered;
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
+            _inputAction.started -= OnTriggered;
+        }
+        if (actionType.HasFlag(ActionType.Cancelled))
+        {
+            _inputAction.canceled -= OnTriggered;
+        }
+        if (actionType.HasFlag(ActionType.Performed))
+        {
+            _inputAction.performed -= OnTriggered;
         }
     }
 }
