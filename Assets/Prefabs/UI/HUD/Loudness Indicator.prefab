@@ -56,7 +56,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5494916723886573724}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -91,18 +91,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd4f8ba292f6df44aba3cdd19fcd7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlertIndicator
+  _image: {fileID: 2846380291364487254}
   shakeLevelTooLoud: {fileID: 4538872149998746580}
   shakeLevelDanger: {fileID: 3543276513568747323}
   levelLowThreshold: 0.1
   levelMediumLowThreshold: 0.3
   levelMediumThreshold: 0.5
-  levelTooMuchThreshold: 0.7
+  levelTooLoudThreshold: 0.7
   levelDangerThreshold: 0.95
   spriteLevelLow: {fileID: -7043558261785099754, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   spriteLevelMediumLow: {fileID: -326175143475976935, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   spriteLevelMedium: {fileID: 8145313310028506312, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   spriteLevelTooLoud: {fileID: -8179030732515529359, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   maxLoudness: 100
+  _currentLoudness: 54.2
 --- !u!95 &1707364535389908335
 Animator:
   serializedVersion: 7
