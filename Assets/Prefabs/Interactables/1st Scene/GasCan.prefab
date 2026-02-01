@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &1317047494945729589
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_Name
+      value: GasCan
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -4.84
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.32133
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6134053111709598686}
+  m_SourcePrefab: {fileID: 100100000, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+--- !u!1 &5765965038665272006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 1317047494945729589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6134053111709598686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5765965038665272006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 302ca3bbfaaf8cf4e907c750a27f1253, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GasCan
+  thisInteractable: 0
+  mainSprite: {fileID: 6920938541949335012}
+  outlineSprite: {fileID: 8143535298815030890}
+  interactions:
+  - {fileID: 11400000, guid: 748055f3f16db624db7813550006631f, type: 2}
+  - {fileID: 11400000, guid: 13f7e0793469dd7449955b398ded0223, type: 2}
+  - {fileID: 11400000, guid: 6cf7dd667e7ae5845bf0cc16b2831e08, type: 2}
+  - {fileID: 11400000, guid: a1d5db13c3cb4de4287d7e8937409057, type: 2}
+  - {fileID: 11400000, guid: e881e4f63b1bf764fae4172b2302a580, type: 2}
+  OnInteractionStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!212 &6920938541949335012 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8235688818607249873, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 1317047494945729589}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &8143535298815030890 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7153037283383810655, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 1317047494945729589}
+  m_PrefabAsset: {fileID: 0}

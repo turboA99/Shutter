@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &921291873361197215
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_Name
+      value: BerryBush
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.6389278
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.40590847
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8881937173306250605}
+  m_SourcePrefab: {fileID: 100100000, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+--- !u!1 &5659567892025056876 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 921291873361197215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8881937173306250605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659567892025056876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6053d96c97c238e4dafd9dec16388343, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BerryBush
+  thisInteractable: 2
+  mainSprite: {fileID: 9115880805046427982}
+  outlineSprite: {fileID: 8038265151592489664}
+  interactions:
+  - {fileID: 11400000, guid: 82ce0aafcbbef664bad77c4eebed6105, type: 2}
+  - {fileID: 11400000, guid: 8fe0f00f573f53343b2d411b85099594, type: 2}
+  - {fileID: 11400000, guid: 7e17e27070c8f8446a914bb7bf491b16, type: 2}
+  - {fileID: 11400000, guid: 08af6ba59f171954ca2857b78208b328, type: 2}
+  OnInteractionStarted:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!212 &8038265151592489664 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7153037283383810655, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 921291873361197215}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &9115880805046427982 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8235688818607249873, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 921291873361197215}
+  m_PrefabAsset: {fileID: 0}

@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &2422357321263668523
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_Name
+      value: TrashCan
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4837924735139138608, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7563419075545722656}
+  m_SourcePrefab: {fileID: 100100000, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+--- !u!212 &4816952351745853300 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7153037283383810655, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 2422357321263668523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &6041291372814730490 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8235688818607249873, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 2422357321263668523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7196246663273724888 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
+  m_PrefabInstance: {fileID: 2422357321263668523}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7563419075545722656
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7196246663273724888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f14771ba34a3543458e68c52b753c4db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::TrashCan
+  thisInteractable: 3
+  mainSprite: {fileID: 6041291372814730490}
+  outlineSprite: {fileID: 4816952351745853300}
+  interactions:
+  - {fileID: 11400000, guid: 346870e233fdac54da29cd685fc8bbd3, type: 2}
+  - {fileID: 11400000, guid: 8faaf4565e783bc4e93cd4be0e0059fa, type: 2}
+  - {fileID: 11400000, guid: 298d013efbfc551428697f7be5c01e9d, type: 2}
+  - {fileID: 11400000, guid: 7d2e34f1eafdf4b4cb1190dfab8c6dfa, type: 2}
+  OnInteractionStarted:
+    m_PersistentCalls:
+      m_Calls: []
