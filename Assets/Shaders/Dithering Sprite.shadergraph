@@ -3491,7 +3491,7 @@
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],
-    "m_Value": 4.119999885559082,
+    "m_Value": 1.0,
     "m_FloatType": 1,
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
@@ -4303,8 +4303,8 @@
     "m_ObjectId": "b6e9e8bd143440b29c3a7825223c1821",
     "m_Title": "Pixelization",
     "m_Position": {
-        "x": -1642.000244140625,
-        "y": -357.0000305175781
+        "x": -1642.0,
+        "y": -357.0
     }
 }
 
@@ -5372,7 +5372,7 @@
     "m_Hidden": false,
     "m_PerRendererData": false,
     "m_customAttributes": [],
-    "m_Value": 1.0,
+    "m_Value": 0.0,
     "m_FloatType": 1,
     "m_LiteralFloatMode": false,
     "m_RangeValues": {
