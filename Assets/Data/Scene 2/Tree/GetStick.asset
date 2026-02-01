@@ -19,6 +19,6 @@ MonoBehaviour:
   characterThoughts: 
   newItem: 9
   noiseLevel: 3
-  clipToPlay: {fileID: 8300000, guid: 1de4d5fd154063a4ba52f0995398d4f4, type: 3}
+  clipToPlay: {fileID: 8300000, guid: 4d18da3d97cea1943a4aaa53afea05c3, type: 3}
   reductionLevel: 0
   duration: 0

@@ -15,10 +15,11 @@ MonoBehaviour:
   interactedObject: 5
   newSprite: {fileID: -211910210179331324, guid: b18037a398538c24483bb3be718d35d1, type: 3}
   newOutline: {fileID: 3215757744220215851, guid: ac2d6cb4e29539c458ed60a136bbe9bb, type: 3}
+  inventorySprite: {fileID: 0}
   characterThoughts: There is an abandoned car here. I could open the hood, but it's
     rusted. I need something to pry it open.
   newItem: 0
   noiseLevel: 3
-  clipToPlay: {fileID: 8300000, guid: df7d4bcef10ff9049a23e3cc77beb2f1, type: 3}
+  clipToPlay: {fileID: 8300000, guid: 07d8f3a21e8266648957ac42482df670, type: 3}
   reductionLevel: 0
   duration: 0

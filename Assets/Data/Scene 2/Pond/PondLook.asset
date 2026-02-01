@@ -15,9 +15,10 @@ MonoBehaviour:
   interactedObject: 8
   newSprite: {fileID: -5160882468792293898, guid: 4351655972e6c48438183d9b0f9ee2fa, type: 3}
   newOutline: {fileID: -2943018778262267445, guid: 91e97846a489a79439c2b0651c90a294, type: 3}
+  inventorySprite: {fileID: 0}
   characterThoughts: There is a small pond here with some fish swimming around.
   newItem: 0
   noiseLevel: 2
-  clipToPlay: {fileID: 8300000, guid: bdd36fe10e284634d90cc2c96cc647d3, type: 3}
+  clipToPlay: {fileID: 8300000, guid: b6b205012371d28498737915207929a3, type: 3}
   reductionLevel: 0
   duration: 0

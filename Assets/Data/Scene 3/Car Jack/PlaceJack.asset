@@ -15,9 +15,10 @@ MonoBehaviour:
   interactedObject: 13
   newSprite: {fileID: -8008343212810044361, guid: 04a421cafb427d64286655fb85323fb5, type: 3}
   newOutline: {fileID: -4079247766445177453, guid: c8a362745f283a3438a84b8516da2f1d, type: 3}
+  inventorySprite: {fileID: 0}
   characterThoughts: 
   newItem: 1
   noiseLevel: 3
-  clipToPlay: {fileID: 8300000, guid: df7d4bcef10ff9049a23e3cc77beb2f1, type: 3}
+  clipToPlay: {fileID: 8300000, guid: 07d8f3a21e8266648957ac42482df670, type: 3}
   reductionLevel: 0
   duration: 0
