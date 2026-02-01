@@ -1,41 +1,47 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-public class Interactable : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
+public abstract class Interactable : MonoBehaviour, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    [SerializeField] private InteractableType thisInteractable;
+    [SerializeField] protected InteractableObject thisInteractable;
+    [SerializeField] protected SpriteRenderer mainSprite;
+    [SerializeField] protected SpriteRenderer outlineSprite;
+
+    [SerializeField] protected List<Interaction> interactions;
+
+    public UnityEvent<Interaction> OnInteractionStarted;
+
+    protected void Start()
+    {
+        OnInteractionStarted.AddListener(InteractionManager.instance.Interacted);
+        InteractionManager.instance.OnInteractionDecided.AddListener(Interacted);
+    }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        DecideInteraction();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        outlineSprite.gameObject.SetActive(false);
     }
 
-    void IPointerEnterHandler.OnPointerEnter(PointerEventData eventData)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        throw new System.NotImplementedException();
+        outlineSprite.gameObject.SetActive(true);
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private void OnDestroy()
     {
-        
+        OnInteractionStarted.RemoveAllListeners();
+        InteractionManager.instance.OnInteractionDecided.RemoveListener(Interacted);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public abstract void DecideInteraction();
 
-    
-}
-
-public enum InteractableType
-{
-    FixableCar
+    public abstract void Interacted(Interaction interaction);
 }
