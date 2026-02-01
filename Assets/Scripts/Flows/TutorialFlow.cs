@@ -7,7 +7,7 @@ namespace Flows
     {
         public void FinishTutorial()
         {
-            SceneManager.LoadScene("idk");
+            SceneManager.LoadScene("MainGame");
         }
     }
 }

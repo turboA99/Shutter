@@ -35,6 +35,7 @@ namespace Managers
 
             if (interaction.duration == 0)
             {
+                interactableSource.Stop();
                 interactableSource.PlayOneShot(interaction.clipToPlay);
             }
         }

@@ -1,4 +1,5 @@
 using System;
+using Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
@@ -32,6 +33,7 @@ public class InputActionTrigger : MonoBehaviour
     {
         if (context.ReadValueAsButton())
         {
+            AwarenessManager.instance.IncreaseAwareness(NoiseMade.Medium);
             eventToTrigger?.Invoke();
         }
     }

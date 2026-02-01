@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaad1de714701a449f0d6397467bf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputActionTrigger
-  inputActionReference: {fileID: 6700256192694034535, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  inputActionReference: {fileID: -3302062531445913665, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   actionType: 0
   eventToTrigger:
     m_PersistentCalls:
