@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FirstCarLook
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 4
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 21300000, guid: fb4f07220998b5b47b0f06def0dd7edc, type: 3}
+  newOutline: {fileID: 1270037320488764399, guid: 96734f41dd197aa4094ab2466bb6bd76, type: 3}
   characterThoughts: There is another person's car here. I wonder if they're still
     out there?
   newItem: 0

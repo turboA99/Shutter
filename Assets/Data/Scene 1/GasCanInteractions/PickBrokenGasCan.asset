@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PickBrokenGasCan
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 1
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 0}
+  newOutline: {fileID: 7998571638734808298, guid: a98be4de155317d4a97b141db257b3d6, type: 3}
   characterThoughts: 
   newItem: 2
   noiseLevel: 1
