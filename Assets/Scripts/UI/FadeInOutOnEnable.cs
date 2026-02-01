@@ -11,10 +11,7 @@ namespace UI
         [SerializeField]float fadeDuration = .2f;
     
         [Tooltip("The images to fade in and out")]
-        [SerializeField] List<Image> images;
-
-        [Tooltip("The texts to fade in and out")]
-        [SerializeField] List<TextMeshProUGUI> tmpTexts;
+        [SerializeField] List<Graphic> images;
     
     
         Dictionary<object, Color> _rememberedColors = new();
@@ -24,7 +21,6 @@ namespace UI
         void Awake()
         {
             images.ForEach(image => _rememberedColors.Add(image, image.color));
-            tmpTexts.ForEach(tmpText => _rememberedColors.Add(tmpText, tmpText.color));
         
             _animationFadeIn = new SimpleAnimation(fadeDuration,
                 progress =>
@@ -36,13 +32,6 @@ namespace UI
                         transparent.a = 0;
                         image.color = Color.Lerp(transparent, color, progress);
                     });
-                    tmpTexts.ForEach(tmpText =>
-                    {
-                        var color = _rememberedColors[tmpText];
-                        var transparent = color;
-                        transparent.a = 0;
-                        tmpText.color = Color.Lerp(transparent, color, progress);
-                    });
                 });
             _animationFadeOut = new SimpleAnimation(fadeDuration,
                 progress =>
@@ -53,13 +42,6 @@ namespace UI
                         var transparent = color;
                         transparent.a = 0;
                         image.color = Color.Lerp(color, transparent, progress);
-                    });
-                    tmpTexts.ForEach(tmpText =>
-                    {
-                        var color = _rememberedColors[tmpText];
-                        var transparent = color;
-                        transparent.a = 0;
-                        tmpText.color = Color.Lerp(color, transparent, progress);
                     });
                 });
         }

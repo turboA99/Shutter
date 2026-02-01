@@ -482,7 +482,6 @@ public class AutomaticVirtualCursor : MonoBehaviour
                 ////REVIEW: the fact we have no events on these means that actions won't have an event ID to go by; problem?
                 InputState.Change(m_VirtualMouse.position, newPosition);
                 InputState.Change(m_VirtualMouse.delta, delta);
-                m_VirtualMouse.WarpCursorPosition(newPosition);
 
                 // Update software cursor transform, if any.
                 if (m_CursorTransform != null &&
