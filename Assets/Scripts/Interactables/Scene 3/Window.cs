@@ -78,4 +78,11 @@ public class Window : Interactable
 
         yield break;
     }
+
+    private void OnDisable()
+    {
+        isIdle = true;
+        mainSprite.sprite = closedFrame;
+        outlineSprite.sprite = closedHighlight;
+    }
 }

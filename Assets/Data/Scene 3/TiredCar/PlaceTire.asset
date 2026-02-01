@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlaceTire
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 14
-  newSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  newSprite: {fileID: 8184868635094287428, guid: b5391b13b7d82114880f9f4a26e87404, type: 3}
+  newOutline: {fileID: -8367287647524474215, guid: 7c4bc06b621ecac4793660aa96043ad0, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 2

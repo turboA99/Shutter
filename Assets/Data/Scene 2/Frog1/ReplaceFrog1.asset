@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ReplaceFrog1
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 6
-  newSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  newSprite: {fileID: 8533748852153243735, guid: 248db99573a79d94fb92fe9188e55e89, type: 3}
+  newOutline: {fileID: -1924225588640921688, guid: f99e787ac3ba8594fbb0b225a2322b5d, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 1

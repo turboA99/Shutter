@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LookWindow
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 11
-  newSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  newSprite: {fileID: 4938978158909084811, guid: 27f6499ea6de1c042b3c2782f0812d83, type: 3}
+  newOutline: {fileID: 2111831931845962090, guid: 1eaac9bd172fbaf4f84ecc884f14f1f9, type: 3}
   characterThoughts: The window is broken and I could go inside. Too bad there is
     a wolf in there. I could open the curtains but I don't want to stand so close
     to the wolf.

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PickFrog1
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 6
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 0}
+  newOutline: {fileID: -1924225588640921688, guid: f99e787ac3ba8594fbb0b225a2322b5d, type: 3}
   characterThoughts: 
   newItem: 7
   noiseLevel: 3

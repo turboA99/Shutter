@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FixedCarGas
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 0
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: -3791115240197611363, guid: 80a6a781071ddba42a0752f4f9a8d9ff, type: 3}
+  newOutline: {fileID: 7721667845210551252, guid: 8418417503875d8498bcbe836f17758f, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 3

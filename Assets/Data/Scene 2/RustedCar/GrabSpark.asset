@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GrabSpark
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 5
-  newSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  newOutline: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  newSprite: {fileID: 1967941411555122448, guid: 70ff1f8bc29ad67479dc86601f8c23bb, type: 3}
+  newOutline: {fileID: 3215757744220215851, guid: ac2d6cb4e29539c458ed60a136bbe9bb, type: 3}
   characterThoughts: 
   newItem: 10
   noiseLevel: 2

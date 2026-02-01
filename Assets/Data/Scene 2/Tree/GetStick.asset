@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GetStick
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 9
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 6853316077166303748, guid: 69bd78b12e3a025408477e700ee53139, type: 3}
+  newOutline: {fileID: -8969260515580178878, guid: 13d292649798ad54cadd0be94de60cab, type: 3}
   characterThoughts: 
   newItem: 9
   noiseLevel: 3
