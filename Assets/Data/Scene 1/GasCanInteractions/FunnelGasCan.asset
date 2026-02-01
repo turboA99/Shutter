@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FunnelGasCan
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 1
-  newSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  newOutline: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  newSprite: {fileID: 21300000, guid: 734a2cae0797dd147872d5b1e201d297, type: 3}
+  newOutline: {fileID: 21300000, guid: 20bbfca05b720a64c8d6b6bcd95cbfe6, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 2
