@@ -63,7 +63,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd4f8ba292f6df44aba3cdd19fcd7bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AlertIndicator
-  _image: {fileID: 2846380291364487254}
   shakeLevelTooLoud: {fileID: 4538872149998746580}
   shakeLevelDanger: {fileID: 3543276513568747323}
   levelLowThreshold: 0.1
@@ -104,7 +103,6 @@ MonoBehaviour:
   spriteLevelMedium: {fileID: 8145313310028506312, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   spriteLevelTooLoud: {fileID: -8179030732515529359, guid: fb6fbccc21498dd429f9b6395988545b, type: 3}
   maxLoudness: 100
-  _currentLoudness: 54.2
 --- !u!95 &1707364535389908335
 Animator:
   serializedVersion: 7
