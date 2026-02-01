@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PondLook
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 8
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: -5160882468792293898, guid: 4351655972e6c48438183d9b0f9ee2fa, type: 3}
+  newOutline: {fileID: -2943018778262267445, guid: 91e97846a489a79439c2b0651c90a294, type: 3}
   characterThoughts: There is a small pond here with some fish swimming around.
   newItem: 0
   noiseLevel: 2

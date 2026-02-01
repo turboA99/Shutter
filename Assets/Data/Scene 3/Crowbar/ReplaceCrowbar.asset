@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ReplaceCrowbar
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 12
-  newSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  newSprite: {fileID: 21300000, guid: 8d62cffa77479f1458d6d17bc35b4fd0, type: 3}
+  newOutline: {fileID: 21300000, guid: 4c717ad23d2caef4a87125b23c38d00a, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 1

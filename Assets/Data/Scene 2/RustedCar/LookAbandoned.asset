@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LookAbandoned
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 5
-  newSprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+  newSprite: {fileID: -211910210179331324, guid: b18037a398538c24483bb3be718d35d1, type: 3}
+  newOutline: {fileID: 3215757744220215851, guid: ac2d6cb4e29539c458ed60a136bbe9bb, type: 3}
   characterThoughts: There is an abandoned car here. I could open the hood, but it's
     rusted. I need something to pry it open.
   newItem: 0

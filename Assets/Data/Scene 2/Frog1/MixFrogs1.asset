@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MixFrogs1
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 6
-  newSprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  newOutline: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+  newSprite: {fileID: 21300000, guid: 5ae4c4eebddfbd84c934436f92e35fcb, type: 3}
+  newOutline: {fileID: 21300000, guid: 2c56f63b904020340836596c3423d9d0, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 0

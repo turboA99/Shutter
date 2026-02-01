@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PickJack
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 13
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 0}
+  newOutline: {fileID: -4079247766445177453, guid: c8a362745f283a3438a84b8516da2f1d, type: 3}
   characterThoughts: 
   newItem: 13
   noiseLevel: 2

@@ -69,4 +69,11 @@ public class Frog1 : Interactable
     {
         
     }
+
+    private void OnEnable()
+    {
+        isIdle = true;
+        mainSprite.sprite = interactions[1].newSprite;
+        outlineSprite.sprite = interactions[1].newOutline;
+    }
 }

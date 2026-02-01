@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: GrabFunnel
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 10
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: -200840060004018232, guid: fbb61966723990e4d9823ea0be6410d8, type: 3}
+  newOutline: {fileID: 9108402394358510512, guid: 3175a52dcaf64f04b9650879ef7fc422, type: 3}
   characterThoughts: 
   newItem: 12
   noiseLevel: 3

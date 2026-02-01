@@ -51,4 +51,10 @@ public class TrashCan : Interactable
     {
         
     }
+
+    private void OnDisable()
+    {
+        mainSprite.sprite = interactions[0].newSprite;
+        outlineSprite.sprite = interactions[0].newOutline;
+    }
 }

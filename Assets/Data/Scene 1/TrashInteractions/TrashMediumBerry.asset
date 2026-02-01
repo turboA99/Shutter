@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TrashMediumBerry
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 3
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 21300000, guid: 7d4c61940cf024842ab454bd02b586f3, type: 3}
+  newOutline: {fileID: 21300000, guid: 895cfbca7428211458e9dc583239a2c3, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 0
