@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: MoveCurtain
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 11
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: -8294607452605620644, guid: 7eedf022441c40942b73aa26f52ec34c, type: 3}
+  newOutline: {fileID: 2111831931845962090, guid: 1eaac9bd172fbaf4f84ecc884f14f1f9, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 3

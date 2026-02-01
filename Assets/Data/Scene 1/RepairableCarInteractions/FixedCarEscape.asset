@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: FixedCarEscape
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 0
-  newSprite: {fileID: 21300000, guid: b346b2a2df1d290438be3287b6419408, type: 3}
-  newOutline: {fileID: 21300000, guid: b346b2a2df1d290438be3287b6419408, type: 3}
+  newSprite: {fileID: -3791115240197611363, guid: 80a6a781071ddba42a0752f4f9a8d9ff, type: 3}
+  newOutline: {fileID: 7721667845210551252, guid: 8418417503875d8498bcbe836f17758f, type: 3}
   characterThoughts: 
   newItem: 0
   noiseLevel: 0

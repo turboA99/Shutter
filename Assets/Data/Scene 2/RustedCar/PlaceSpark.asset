@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PlaceSpark
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 5
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 1967941411555122448, guid: 70ff1f8bc29ad67479dc86601f8c23bb, type: 3}
+  newOutline: {fileID: 3215757744220215851, guid: ac2d6cb4e29539c458ed60a136bbe9bb, type: 3}
   characterThoughts: 
   newItem: 1
   noiseLevel: 2

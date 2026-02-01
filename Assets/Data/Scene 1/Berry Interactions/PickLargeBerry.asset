@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PickLargeBerry
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 2
-  newSprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  newOutline: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
+  newSprite: {fileID: 6545382614753218560, guid: 2659b8d69c5ad9c498b65e8fb3554b93, type: 3}
+  newOutline: {fileID: 4537747143755365540, guid: 918649afea8ed0d4c8f8355626a3d840, type: 3}
   characterThoughts: 
   newItem: 6
   noiseLevel: 2
