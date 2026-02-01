@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 77b22364ad97ecd45b2c899c4ebc1271
+guid: b859b7334e38bfc46959bd48b3437fd8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7682344191650899667
-    second: Untitled83_20260201024110_0
+      213: 2938708424715755952
+    second: trashwhiten_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,7 +56,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0.258
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled83_20260201024110_0
+      name: trashwhiten_0
       rect:
         serializedVersion: 2
-        x: 752
-        y: 437
-        width: 1644
-        height: 1629
+        x: 446
+        y: 124
+        width: 1734
+        height: 2268
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d29dc5619a4d26590800000000000000
-      internalID: -7682344191650899667
+      spriteID: 0b161a90eb368c820800000000000000
+      internalID: 2938708424715755952
       vertices: []
       indices: 
       edges: []
@@ -125,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled83_20260201024110_0: -7682344191650899667
+      trashwhiten_0: 2938708424715755952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

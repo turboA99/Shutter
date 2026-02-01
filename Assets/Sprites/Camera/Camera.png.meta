@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 77b22364ad97ecd45b2c899c4ebc1271
+guid: b965f575c31d83045a4c862e31702aeb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7682344191650899667
-    second: Untitled83_20260201024110_0
+      213: 1349180431371488363
+    second: Camera_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -56,7 +56,7 @@ TextureImporter:
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: 0.258
+  spriteTessellationDetail: -1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Untitled83_20260201024110_0
+      name: Camera_0
       rect:
         serializedVersion: 2
-        x: 752
-        y: 437
-        width: 1644
-        height: 1629
+        x: 1334
+        y: 658
+        width: 1188
+        height: 1188
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d29dc5619a4d26590800000000000000
-      internalID: -7682344191650899667
+      spriteID: b6c4ecd347049b210800000000000000
+      internalID: 1349180431371488363
       vertices: []
       indices: 
       edges: []
@@ -125,8 +125,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Untitled83_20260201024110_0: -7682344191650899667
+      Camera_0: 1349180431371488363
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
