@@ -177,8 +177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b914ac5e50f8ed4bbb207bee342e9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.Shake
-  shakeDistance: 5
-  durationBetweenShakes: 0.1
+  shakeDistance: 10
+  durationBetweenShakes: 0.5
   doRandomizeDelay: 0
 --- !u!114 &3911828337119473119
 MonoBehaviour:

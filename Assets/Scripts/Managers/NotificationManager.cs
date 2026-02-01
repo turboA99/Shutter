@@ -123,5 +123,10 @@ namespace Managers
 
             TryBroadcast(notification);
         }
+
+        public void Broadcast(Interaction interaction)
+        {
+            Broadcast(interaction.characterThoughts);
+        }
     }
 }

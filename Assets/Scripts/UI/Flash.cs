@@ -40,7 +40,7 @@ namespace UI
                     _flashOut.Play();
                 });
             _flashOut = new SimpleAnimation(
-                flashInDuration,
+                flashOutDuration,
                 progress => _image.color = Color.Lerp(Color.white, semiDarkColor, progress),
                 () =>
                 {

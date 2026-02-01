@@ -7,15 +7,27 @@ namespace UI
 {
     public class Shake : MonoBehaviour
     {
-        [SerializeField][Tooltip("How far from the initial position the object can shake to")]
-        float shakeDistance = .1f;
+        [SerializeField] [Tooltip("How far from the initial position the object can shake to")]
+        public float shakeDistance = .1f;
 
-        [SerializeField][Tooltip("How much time passes between shakes")]
-        float durationBetweenShakes = .1f;
-    
+        public float ShakeDistance
+        {
+            get => shakeDistance;
+            set => shakeDistance = value;
+        }
+
+        [SerializeField] [Tooltip("How much time passes between shakes")]
+        public float durationBetweenShakes = .1f;
+        
+        public float DurationBetweenShakes
+        {
+            get => shakeDistance;
+            set => shakeDistance = value;
+        }
+
         [SerializeField]
         bool doRandomizeDelay = true;
-    
+
         Vector3 _initialPosition;
         float _delay;
         float? _previousShakeTime;
@@ -35,12 +47,12 @@ namespace UI
 
         void Update()
         {
-            
+
             var timeDifference = Time.time - _previousShakeTime;
             if (timeDifference >= durationBetweenShakes)
             {
                 var angle = Random.Range(0, 2 * Mathf.PI);
-                var direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f) ;
+                var direction = new Vector3(Mathf.Cos(angle), Mathf.Sin(angle), 0f);
                 var distance = Random.Range(0f, Mathf.Clamp(shakeDistance, 0f, float.MaxValue));
                 var newPosition = _initialPosition + direction * distance;
                 transform.SetPositionAndRotation(newPosition, transform.rotation);
