@@ -483,7 +483,8 @@ MonoBehaviour:
   thisInteractable: 8
   mainSprite: {fileID: 8495005759931389618}
   outlineSprite: {fileID: 7272161525439255868}
-  interactions: []
+  interactions:
+  - {fileID: 11400000, guid: 7439c662219c7974a83f8b32ee3b2120, type: 2}
   OnInteractionStarted:
     m_PersistentCalls:
       m_Calls: []

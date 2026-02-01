@@ -19,6 +19,6 @@ MonoBehaviour:
     rusted. I need something to pry it open.
   newItem: 0
   noiseLevel: 3
-  clipToPlay: {fileID: 0}
+  clipToPlay: {fileID: 8300000, guid: df7d4bcef10ff9049a23e3cc77beb2f1, type: 3}
   reductionLevel: 0
   duration: 0

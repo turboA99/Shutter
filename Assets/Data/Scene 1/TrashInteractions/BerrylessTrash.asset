@@ -19,6 +19,6 @@ MonoBehaviour:
     can it might trick the monster.
   newItem: 0
   noiseLevel: 3
-  clipToPlay: {fileID: 0}
+  clipToPlay: {fileID: 8300000, guid: 951b2cfd3cba32343b1f54fe3273b037, type: 3}
   reductionLevel: 0
   duration: 0

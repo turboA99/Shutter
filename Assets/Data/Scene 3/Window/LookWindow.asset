@@ -20,6 +20,6 @@ MonoBehaviour:
     to the wolf.
   newItem: 0
   noiseLevel: 2
-  clipToPlay: {fileID: 0}
+  clipToPlay: {fileID: 8300000, guid: 6d8a30cbc2fc5d9459b58d68318f8258, type: 3}
   reductionLevel: 0
   duration: 0

@@ -8,6 +8,7 @@ public class Interaction : ScriptableObject
     public InteractableObject interactedObject;
     public Sprite newSprite;
     public Sprite newOutline;
+    public Sprite inventorySprite;
     public string characterThoughts;
     public InventoryItem newItem;
     public NoiseMade noiseLevel;

@@ -18,6 +18,6 @@ MonoBehaviour:
   characterThoughts: I need something to lift the car before I can put the tire on.
   newItem: 0
   noiseLevel: 3
-  clipToPlay: {fileID: 0}
+  clipToPlay: {fileID: 8300000, guid: df7d4bcef10ff9049a23e3cc77beb2f1, type: 3}
   reductionLevel: 0
   duration: 0

@@ -34,6 +34,7 @@ public class AudioManager : MonoBehaviour
 
         if (interaction.duration == 0)
         {
+            interactableSource.Stop();
             interactableSource.PlayOneShot(interaction.clipToPlay);
         }
     }
