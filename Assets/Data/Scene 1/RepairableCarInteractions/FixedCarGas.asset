@@ -18,6 +18,6 @@ MonoBehaviour:
   characterThoughts: 
   newItem: 1
   noiseLevel: 3
-  clipToPlay: {fileID: 0}
+  clipToPlay: {fileID: 8300000, guid: bdd36fe10e284634d90cc2c96cc647d3, type: 3}
   reductionLevel: 0
   duration: 0

@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: GrabFunnel
   m_EditorClassIdentifier: Assembly-CSharp::Interaction
   interactedObject: 10
-  newSprite: {fileID: -200840060004018232, guid: fbb61966723990e4d9823ea0be6410d8, type: 3}
-  newOutline: {fileID: 9108402394358510512, guid: 3175a52dcaf64f04b9650879ef7fc422, type: 3}
+  newSprite: {fileID: 21300000, guid: fbb61966723990e4d9823ea0be6410d8, type: 3}
+  newOutline: {fileID: 21300000, guid: 3175a52dcaf64f04b9650879ef7fc422, type: 3}
+  inventorySprite: {fileID: 21300000, guid: 62c9c3138f1939b4f81c8af2d8fe2974, type: 3}
   characterThoughts: 
   newItem: 12
   noiseLevel: 3
-  clipToPlay: {fileID: 0}
+  clipToPlay: {fileID: 8300000, guid: eea3edb728869114e9b6b3c3d235ec51, type: 3}
   reductionLevel: 0
   duration: 0
