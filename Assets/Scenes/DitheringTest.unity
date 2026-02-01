@@ -231,14 +231,6 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 155523373}
-    - target: {fileID: 1687272473294388669, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1687272473294388669, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_RenderMode
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1790811268985181379, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
       propertyPath: m_Name
       value: HUD
@@ -258,34 +250,6 @@ PrefabInstance:
     - target: {fileID: 2759352364344644925, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 61
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586384102389746433, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586384102389746433, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_UiScaleMode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586384102389746433, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_PresetInfoIsWorld
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586384102389746433, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_DynamicPixelsPerUnit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586384102389746433, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_ReferenceResolution.x
-      value: 1920
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586384102389746433, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_ReferenceResolution.y
-      value: 1080
-      objectReference: {fileID: 0}
-    - target: {fileID: 3586384102389746433, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
-      propertyPath: m_ReferencePixelsPerUnit
-      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 5112252744804259284, guid: c07f025d685ee234ca34530629f7b6bc, type: 3}
       propertyPath: m_AnchorMax.x
