@@ -1,16 +1,15 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
 
-namespace UI
+namespace Effects
 {
     public class FadeInOutOnEnable : MonoBehaviour
     {
         [SerializeField]float fadeDuration = .2f;
     
-        [Tooltip("The images to fade in and out")]
+        [Tooltip("The graphics to fade in and out")]
         [SerializeField] List<Graphic> images;
     
     

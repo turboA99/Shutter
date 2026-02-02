@@ -266,6 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d0cb3c2c9fb14b94760a5712537c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutomaticVirtualCursor
+  inputAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_CursorMode: 0
   m_CursorGraphic: {fileID: 980969234230334401}
   m_CursorTransform: {fileID: 4562699760074160047}
@@ -282,7 +283,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 5626598994674785257, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    m_Reference: {fileID: -2210437109046839774, guid: 72f80c84de8226940b27252cfacaf688, type: 3}
   m_LeftButtonAction:
     m_UseReference: 1
     m_Action:
@@ -294,7 +295,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -2348452114643230885, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    m_Reference: {fileID: 284844042409143040, guid: 72f80c84de8226940b27252cfacaf688, type: 3}
   m_MiddleButtonAction:
     m_UseReference: 0
     m_Action:
@@ -308,7 +309,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_RightButtonAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Right Button
       m_Type: 0
@@ -318,7 +319,7 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 3585700454850441073, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    m_Reference: {fileID: 0}
   m_ForwardButtonAction:
     m_UseReference: 0
     m_Action:
@@ -332,7 +333,7 @@ MonoBehaviour:
       m_Flags: 0
     m_Reference: {fileID: 0}
   m_BackButtonAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Back Button
       m_Type: 0
@@ -342,9 +343,9 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -5798376121607376589, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    m_Reference: {fileID: 0}
   m_ScrollWheelAction:
-    m_UseReference: 1
+    m_UseReference: 0
     m_Action:
       m_Name: Scroll Wheel
       m_Type: 0
@@ -354,4 +355,4 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: -5268323268902198617, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+    m_Reference: {fileID: 0}

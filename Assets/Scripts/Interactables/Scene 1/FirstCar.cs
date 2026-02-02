@@ -1,3 +1,4 @@
+using Interactions;
 using UnityEngine;
 
 public class FirstCar : Interactable

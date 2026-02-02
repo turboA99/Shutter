@@ -843,7 +843,19 @@ MonoBehaviour:
         m_CallState: 2
   OnEventSequenceFinished:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Flows.TutorialFlow, Assembly-CSharp
+        m_MethodName: FinishTutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnStepCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -895,8 +907,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaad1de714701a449f0d6397467bf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputActionTrigger
-  inputActionReference: {fileID: 6700256192694034535, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  actionType: 2
+  trigger:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: cc7df88d-ae75-4dd7-88a4-b74e92887fbb
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: -3172750279251928871, guid: 72f80c84de8226940b27252cfacaf688, type: 3}
+  actionType: 1
   eventToTrigger:
     m_PersistentCalls:
       m_Calls:

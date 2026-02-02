@@ -9,13 +9,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8134121983437427511}
+  - component: {fileID: 3224077003335223601}
   - component: {fileID: 8112029171983006974}
-  - component: {fileID: 1297743295245982138}
   - component: {fileID: 6272105467716073570}
   - component: {fileID: 1986613922986066391}
   - component: {fileID: 879093642947966596}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Audio Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,6 +36,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3224077003335223601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7966054518999821011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92912c306040dc748a4b4d2755205069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Managers.AudioManager
+  interactableSource: {fileID: 8112029171983006974}
+  maskerSource: {fileID: 6272105467716073570}
+  ambientSource: {fileID: 1986613922986066391}
 --- !u!82 &8112029171983006974
 AudioSource:
   m_ObjectHideFlags: 0
@@ -45,7 +60,7 @@ AudioSource:
   m_GameObject: {fileID: 7966054518999821011}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2259076674989437723, guid: e4dc1a4c317141c40864bce604483c73, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -133,21 +148,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1297743295245982138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7966054518999821011}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ffd0fdfed460dd41be3a40cfd21d462, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  interactableSource: {fileID: 8112029171983006974}
-  maskerSource: {fileID: 6272105467716073570}
-  ambientSource: {fileID: 1986613922986066391}
 --- !u!82 &6272105467716073570
 AudioSource:
   m_ObjectHideFlags: 0
@@ -157,7 +157,7 @@ AudioSource:
   m_GameObject: {fileID: 7966054518999821011}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 2259076674989437723, guid: e4dc1a4c317141c40864bce604483c73, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -254,7 +254,7 @@ AudioSource:
   m_GameObject: {fileID: 7966054518999821011}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8619501561072028522, guid: e4dc1a4c317141c40864bce604483c73, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: e2e19e46f9dde0c49869c0089f8c2531, type: 3}
   m_PlayOnAwake: 1
@@ -351,7 +351,7 @@ AudioSource:
   m_GameObject: {fileID: 7966054518999821011}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -8619501561072028522, guid: e4dc1a4c317141c40864bce604483c73, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: bf58050319b3f2c4899c4f0823405be4, type: 3}
   m_PlayOnAwake: 1

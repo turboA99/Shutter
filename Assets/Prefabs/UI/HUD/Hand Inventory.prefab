@@ -200,4 +200,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a9e5f3dc60ea04449543f3e4a3437e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UI.InGameInventory
-  itemVisual: {fileID: 0}
+  itemVisual: {fileID: 7528255647854454196}

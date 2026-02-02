@@ -1,4 +1,5 @@
 using System;
+using Effects;
 using UnityEngine;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
@@ -59,13 +60,11 @@ namespace UI
         float _currentLoudness;
 
         Image _image;
-        Animator _animator;
         State _currentState = State.None;
 
         void Awake()
         {
             _image = GetComponent<Image>();
-            _animator = GetComponent<Animator>();
         }
 
         void Start()
@@ -76,6 +75,7 @@ namespace UI
         void UpdateSprite()
         {
             var progress = _currentLoudness / maxLoudness;
+            if (!_image) _image = GetComponent<Image>();
             //Image graphic
             switch (_currentState)
             {

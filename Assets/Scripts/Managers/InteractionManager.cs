@@ -1,11 +1,13 @@
+using Interactions;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 namespace Managers
 {
     public class InteractionManager : MonoBehaviour
     {
-        static public InteractionManager instance;
+        public static InteractionManager instance;
         [SerializeField] Interaction winningInteraction;
 
         public UnityEvent<Interaction> OnInteractionDecided;
@@ -28,9 +30,7 @@ namespace Managers
             {
                 OnWin?.Invoke();
             }
-
-            Debug.Log($"interaction manager: {interaction}");
-
+            
             OnInteractionDecided?.Invoke(interaction);
         }
     }

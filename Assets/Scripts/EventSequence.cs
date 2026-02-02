@@ -21,7 +21,7 @@ public class EventSequence : MonoBehaviour
             OnStepCompleted?.Invoke();
         }
 
-        if (_currentEventIndex == EventSequenceEvents.Count)
+        if (_currentEventIndex == EventSequenceEvents.Count - 1)
         {
             OnEventSequenceFinished?.Invoke();
         }

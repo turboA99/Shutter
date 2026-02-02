@@ -89,12 +89,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c7db38162f73e346b74e3e69ba7cb08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  cooldown: 4
   flashInDuration: 0.1
   flashOutDuration: 5
   fadeOutDuration: 25
   darknessColor: {r: 0, g: 0, b: 0, a: 0.96862745}
   semiDarkColor: {r: 0, g: 0, b: 0, a: 0.40392157}
-  onFlash:
+  OnFlash:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &5178386712027562889
@@ -109,8 +110,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffaad1de714701a449f0d6397467bf9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputActionTrigger
-  inputActionReference: {fileID: -3302062531445913665, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  actionType: 0
+  trigger:
+    m_UseReference: 1
+    m_Action:
+      m_Name: Trigger
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: f86c4c83-7d88-4975-8812-f38e30ebbfb6
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 7401163900083480754, guid: 72f80c84de8226940b27252cfacaf688, type: 3}
+  actionType: 1
   eventToTrigger:
     m_PersistentCalls:
       m_Calls:

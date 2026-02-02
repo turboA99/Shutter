@@ -5,9 +5,10 @@ using UnityEngine.Events;
 
 public class EventAfterDelay : MonoBehaviour
 {
+    [SerializeField] bool playOnEnable = true;
     [SerializeField] float delay = 1.0f;
     [SerializeField] UnityEvent events;
-    [SerializeField] bool playOnEnable = true;
+    bool _wasTriggered;
 
     void OnEnable()
     {
@@ -16,12 +17,19 @@ public class EventAfterDelay : MonoBehaviour
 
     void Trigger()
     {
+        if (_wasTriggered) return;
         StartCoroutine(TriggerCoroutine());
+        _wasTriggered = true;
     }
     
     IEnumerator TriggerCoroutine()
     {
         yield return new WaitForSeconds(delay);
         events?.Invoke();
+    }
+
+    void ResetTrigger()
+    {
+        _wasTriggered = false;
     }
 }

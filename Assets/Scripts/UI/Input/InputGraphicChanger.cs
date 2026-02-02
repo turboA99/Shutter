@@ -5,7 +5,7 @@ using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.Input
 {
     [RequireComponent(typeof(Image))]
     public class InputGraphicChanger : MonoBehaviour
@@ -13,6 +13,7 @@ namespace UI
         [SerializeField] Sprite keyboardMouseSprite;
         [SerializeField] Sprite xboxSprite;
         [SerializeField] Sprite playstationSprite;
+        [SerializeField] Sprite gamepadSprite;
     
         PlayerInput _playerInput;
         Image _image;
@@ -44,11 +45,14 @@ namespace UI
                 case "Keyboard&Mouse":
                     _image.sprite = keyboardMouseSprite;
                     break;
-                case "XboxController":
+                case "Xbox Controller":
                     _image.sprite = xboxSprite;
                     break;
-                case "PlaystationController":
+                case "Playstation Controller":
                     _image.sprite = playstationSprite;
+                    break;
+                case "Gamepad":
+                    _image.sprite = gamepadSprite;
                     break;
             }
         }

@@ -74,7 +74,6 @@ namespace UI
 
         public void Initialize(Notification notification, Action onDestroyed)
         {
-            print("initialize notification");
             _onDestroyed = onDestroyed;
             foreach (var visualElement in visualElements)
             {

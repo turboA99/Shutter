@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3726144354874186860}
   - component: {fileID: 3022792671832241561}
   - component: {fileID: 8573628696495025744}
+  - component: {fileID: 4954390717265930029}
   m_Layer: 0
   m_Name: Victory Screen
   m_TagString: Untagged
@@ -182,6 +183,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4954390717265930029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2540356404678513746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GraphicRaycaster
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!1 &4823168309415014373
 GameObject:
   m_ObjectHideFlags: 0

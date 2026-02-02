@@ -91,3 +91,4 @@ MonoBehaviour:
   keyboardMouseSprite: {fileID: 21300000, guid: 1a91f57ba2b89464c98b8df1d5c5c134, type: 3}
   xboxSprite: {fileID: 21300000, guid: 6a4d1c306002a804ebeea15aaefcdb06, type: 3}
   playstationSprite: {fileID: 21300000, guid: dc8e0a8aca864b44291130f7c35f1cf3, type: 3}
+  gamepadSprite: {fileID: 21300000, guid: 6a4d1c306002a804ebeea15aaefcdb06, type: 3}

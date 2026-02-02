@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1687272473294388669}
   - component: {fileID: 3586384102389746433}
   - component: {fileID: 4001528132771510203}
-  - component: {fileID: 6550157087864064500}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -107,22 +106,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6550157087864064500
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790811268985181379}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165e994ad9b9556458d948a45d342981, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Managers.NotificationManager
-  notificationPrefab: {fileID: 1699260132253545808, guid: 00df46075d129e7488e3732446456f50, type: 3}
-  notificationsParent: {fileID: 6896223592055776084}
-  durationPerWord: 0.2
-  notificationCooldown: 0.7
 --- !u!1001 &1127180732389947277
 PrefabInstance:
   m_ObjectHideFlags: 0

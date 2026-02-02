@@ -1,3 +1,4 @@
+using Interactions;
 using Managers;
 using UnityEngine;
 
@@ -12,8 +13,6 @@ public class FixableCar : Interactable
     
     public override void DecideInteraction()
     {
-        Debug.Log("Fixable Car Deciding Interaction");
-
         switch (InventoryManager.instance.GetItem())
         {
             case InventoryItem.Empty:

@@ -3,37 +3,33 @@ using Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.Serialization;
 
 public class InputActionTrigger : MonoBehaviour
 {
     [Flags] enum ActionType
     {
+        None,
         Started,
         Cancelled,
         Performed
     }
 
-    [SerializeField]
-    InputActionReference inputActionReference;
+    [SerializeField] InputActionProperty trigger;
 
     [SerializeField]
     ActionType actionType = ActionType.Started | ActionType.Cancelled | ActionType.Performed;
 
-    [SerializeField]
-    UnityEvent eventToTrigger;
-
-    InputAction _inputAction;
+    [SerializeField] UnityEvent eventToTrigger;
 
     void Awake()
     {
-        _inputAction = inputActionReference.action;
     }
 
     void OnTriggered(InputAction.CallbackContext context)
     {
         if (context.ReadValueAsButton())
         {
-            AwarenessManager.instance.IncreaseAwareness(NoiseMade.Medium);
             eventToTrigger?.Invoke();
         }
     }
@@ -42,15 +38,15 @@ public class InputActionTrigger : MonoBehaviour
     {
         if (actionType.HasFlag(ActionType.Started))
         {
-            _inputAction.started += OnTriggered;
+            trigger.action.started += OnTriggered;
         }
         if (actionType.HasFlag(ActionType.Cancelled))
         {
-            _inputAction.canceled += OnTriggered;
+            trigger.action.canceled += OnTriggered;
         }
         if (actionType.HasFlag(ActionType.Performed))
         {
-            _inputAction.performed += OnTriggered;
+            trigger.action.performed += OnTriggered;
         }
     }
 
@@ -58,15 +54,15 @@ public class InputActionTrigger : MonoBehaviour
     {
         if (actionType.HasFlag(ActionType.Started))
         {
-            _inputAction.started -= OnTriggered;
+            trigger.action.started -= OnTriggered;
         }
         if (actionType.HasFlag(ActionType.Cancelled))
         {
-            _inputAction.canceled -= OnTriggered;
+            trigger.action.canceled -= OnTriggered;
         }
         if (actionType.HasFlag(ActionType.Performed))
         {
-            _inputAction.performed -= OnTriggered;
+            trigger.action.performed -= OnTriggered;
         }
     }
 }

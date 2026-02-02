@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Interactions;
 using TMPro;
 using UI;
 using UnityEngine;
+using Object = System.Object;
 
 namespace Managers
 {
     public class NotificationManager : MonoBehaviour
     {
+        [SerializeField] TextMeshPro _helperText;
         [SerializeField] const int maxNotificationsShown = 1;
         [SerializeField] GameObject notificationPrefab;
         [SerializeField] RectTransform notificationsParent;
@@ -40,11 +43,6 @@ namespace Managers
             {
                 _isFreeSpots[i] = true;
             }
-        }
-
-        void Start()
-        {
-            _notificationHeight = notificationPrefab.GetComponent<RectTransform>().rect.height;
         }
 
         bool TryGetFreeSpot(out int index)
@@ -113,10 +111,7 @@ namespace Managers
 
         public void Broadcast(string message)
         {
-            var tmpText = FindAnyObjectByType<TextMeshProUGUI>();
-            var oldText = tmpText.text;
-            var textInfo = tmpText.GetTextInfo(message);
-            tmpText.text = oldText;
+            var textInfo = _helperText.GetTextInfo(message);
             var notification = new Notification(
                 message,
                 durationPerWord * textInfo.wordCount);

@@ -1,3 +1,5 @@
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -9,6 +11,9 @@ namespace UI
     [RequireComponent(typeof(Image))]
     public class Flash : MonoBehaviour
     {
+        [Header("Flash")]
+        [SerializeField] private float cooldown;
+        [Header("Animation")]
         [SerializeField]
         float flashInDuration = .1f;
         [SerializeField]
@@ -19,13 +24,15 @@ namespace UI
         Color darknessColor = Color.black;
         [SerializeField]
         Color semiDarkColor = new(0f, 0f, 0f, .4f);
-        [SerializeField]
-        UnityEvent onFlash;
+        
+        public UnityEvent OnFlash;
     
         SimpleAnimation _flashIn;
         SimpleAnimation _flashOut;
         SimpleAnimation _fadeOut;
         Image _image;
+        
+        bool _canFlash = true;
 
         void Awake()
         {
@@ -35,7 +42,7 @@ namespace UI
                 progress => _image.color = Color.Lerp(darknessColor, Color.white, progress),
                 () =>
                 {
-                    onFlash?.Invoke();
+                    OnFlash?.Invoke();
                     _flashIn.PauseAndReset();
                     _flashOut.Play();
                 });
@@ -70,10 +77,19 @@ namespace UI
 
         public void DoFlash()
         {
+            if (!_canFlash) return;
             _flashIn.PauseAndReset();
             _flashOut.PauseAndReset();
             _fadeOut.PauseAndReset();
             _flashIn.Play();
+            _canFlash = false;
+            StartCoroutine(Cooldown());
+        }
+
+        IEnumerator Cooldown()
+        {
+            yield return new WaitForSeconds(cooldown);
+            _canFlash = true;
         }
     }
 }

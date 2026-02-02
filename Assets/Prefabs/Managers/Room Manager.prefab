@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3718558678058543354}
   - component: {fileID: 3994608121772220351}
   m_Layer: 0
-  m_Name: RoomManager
+  m_Name: Room Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,3 +1,4 @@
+using Interactions;
 using UnityEngine;
 
 namespace Managers
@@ -31,8 +32,6 @@ namespace Managers
 
         public void Interacted(Interaction interaction)
         {
-            Debug.Log($"Audio Manager sees interaction {interaction.interactedObject}");
-
             if (interaction.duration == 0)
             {
                 interactableSource.Stop();

@@ -1,9 +1,8 @@
-using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
-namespace UI
+namespace Effects
 {
     public class Hover : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     {

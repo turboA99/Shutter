@@ -12,6 +12,8 @@ namespace Flows
         [SerializeField] UnityEvent gameOverEvents;
         [SerializeField] Button buttonRestart;
         [SerializeField] Button buttonMainMenu;
+        
+        bool _wasTriggered = false;
 
         void Awake()
         {
@@ -21,7 +23,13 @@ namespace Flows
 
         public void TriggerGameOver()
         {
-            gameOverEvents?.Invoke();
+            if (_wasTriggered) gameOverEvents?.Invoke();
+            _wasTriggered = true;
+        }
+
+        public void ResetTrigger()
+        {
+            _wasTriggered = false;
         }
     }
 }

@@ -1,3 +1,4 @@
+using Interactions;
 using UnityEngine;
 
 namespace Managers
@@ -27,7 +28,6 @@ namespace Managers
             }
 
             currentItem = interaction.newItem;
-            Debug.Log($"New Item: {currentItem}");
         }
 
         public InventoryItem GetItem()

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Utils;
 
-namespace UI
+namespace Effects
 {
     [RequireComponent(typeof(TextMeshProUGUI))]
     public class TextType : MonoBehaviour

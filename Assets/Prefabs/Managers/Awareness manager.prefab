@@ -44,19 +44,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab2710097b2b10246972836c15f4c24c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AwarenessManager
+  flash: {fileID: 0}
   maskDurationScale: 3
   minAwareness: 0
   maxAwareness: 100
   starterAwareness: 0
   awarenessMultiplier: 2
-  reductionMultiplier: 2
+  reductionMultiplier: 4
   reductionIncreaserMultiplier: 0
+  repeatedPenaltyMult: 1
+  maxRepeatsChecked: 5
   OnAwarenessChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UI.AlertIndicator, Assembly-CSharp
+        m_MethodName: UpdateLoudness
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnAwarenessFilled:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Flows.GameOverFlow, Assembly-CSharp
+        m_MethodName: TriggerGameOver
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   OnMaskStart:
     m_PersistentCalls:
       m_Calls: []

@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Interactions;
+using UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,11 +10,12 @@ namespace Managers
     public class AwarenessManager : MonoBehaviour
     {
         public static AwarenessManager instance;
+        [SerializeField] Flash flash;
         [SerializeField] private float maskDurationScale = 3f;
 
         private Interaction _currentMaskInteraction;
         private NoiseReduced _reductionLevel = NoiseReduced.None;
-        private NoiseMade _constantNoiseLevel = NoiseMade.VeryLow;
+        private NoiseLevel _constantNoiseLevel = NoiseLevel.VeryLow;
 
         private List<IEnumerator> _coroutines = new();
 
@@ -25,7 +28,14 @@ namespace Managers
         [SerializeField] private float repeatedPenaltyMult = 1;
         [SerializeField] private int maxRepeatsChecked = 5;
 
-        private float _awareness;
+        float awarness;
+
+        float Awareness
+        {
+            get => awarness;
+            set => awarness = value;
+        }
+
         private List<InteractableObject> _sources = new();
 
         public UnityEvent<float> OnAwarenessChange;
@@ -36,12 +46,22 @@ namespace Managers
 
         private void Awake()
         {
-            instance = this;
+            if (instance == null)
+            {
+                instance = this;
+            }
+            else if (instance != this)
+            {
+                Destroy(gameObject);
+            }
+
+            if (flash) flash.OnFlash.AddListener(() => IncreaseAwareness(NoiseLevel.Medium));
+            else throw new UnityException("Flash must be attached");
         }
 
         void Start()
         {
-            _awareness = starterAwareness;
+            Awareness = starterAwareness;
 
             InteractionManager.instance.OnInteractionDecided.AddListener(Interacted);
             OnMaskEnd.AddListener(UpdateMaskSources);
@@ -54,7 +74,7 @@ namespace Managers
             DecreaseAwarenessPerFrame(DecideAwarenessDecrease(_reductionLevel));
         }
 
-        public float DecideAwarenessIncrease(NoiseMade noiseLevel)
+        public float DecideAwarenessIncrease(NoiseLevel noiseLevel)
         {
             float finalValue = 0;
 
@@ -72,32 +92,30 @@ namespace Managers
 
         public void DecreaseAwarenessPerFrame(float decrease)
         {
-            _awareness = Mathf.Clamp(_awareness - decrease * Time.deltaTime, minAwareness, maxAwareness);
-            OnAwarenessChange?.Invoke(_awareness);
+            Awareness = Mathf.Clamp(Awareness - decrease * Time.deltaTime, minAwareness, maxAwareness);
+            OnAwarenessChange?.Invoke(Awareness);
             CheckAwareness();
         }
 
         private void IncreaseAwarenessPerFrame(float increase)
         {
-            _awareness = Mathf.Clamp(_awareness + increase * Time.deltaTime, minAwareness, maxAwareness);
-            OnAwarenessChange?.Invoke(_awareness);
+            Awareness = Mathf.Clamp(Awareness + increase * Time.deltaTime, minAwareness, maxAwareness);
+            OnAwarenessChange?.Invoke(Awareness);
             CheckAwareness();
         }
 
-        public void IncreaseAwareness(NoiseMade noiseLevel)
+        public void IncreaseAwareness(NoiseLevel noiseLevel)
         {
-            _awareness = Mathf.Clamp(_awareness + DecideAwarenessIncrease(noiseLevel), minAwareness, maxAwareness);
+            Awareness = Mathf.Clamp(Awareness + DecideAwarenessIncrease(noiseLevel), minAwareness, maxAwareness);
 
-            Debug.Log($"Increased: {_awareness}");
-
-            OnAwarenessChange?.Invoke(_awareness);
+            OnAwarenessChange?.Invoke(Awareness);
 
             CheckAwareness();
         }
 
         public void CheckAwareness()
         {
-            if (_awareness >= maxAwareness)
+            if (Awareness >= maxAwareness)
             {
                 OnAwarenessFilled?.Invoke();
             }
@@ -105,10 +123,10 @@ namespace Managers
 
         public void DecreaseAwareness(NoiseReduced reduction)
         {
-            _awareness = Mathf.Clamp(_awareness - DecideAwarenessDecrease(reduction), minAwareness, maxAwareness);
+            Awareness = Mathf.Clamp(Awareness - DecideAwarenessDecrease(reduction), minAwareness, maxAwareness);
 
-            OnAwarenessChange?.Invoke(_awareness);
-            Debug.Log(_awareness);
+            OnAwarenessChange?.Invoke(Awareness);
+            Debug.Log(Awareness);
 
             CheckAwareness();
         }
@@ -139,7 +157,7 @@ namespace Managers
             {
                 return (float)reduction * reductionMultiplier;
             }
-        
+
             return (float)reduction * reductionMultiplier / (amountPrevious * repeatedPenaltyMult);
         }
 
@@ -151,8 +169,6 @@ namespace Managers
             }
 
             IncreaseAwareness(interaction.noiseLevel);
-
-            Debug.Log($"Awareness sees interaction {interaction.interactedObject}");
         }
 
         private void MaskSound(Interaction interaction)
@@ -165,7 +181,6 @@ namespace Managers
                 StopCoroutine(coroutine);
                 _coroutines.Remove(TimeMask(interaction));
                 OnMaskEnd?.Invoke(interaction);
-                Debug.Log($"Masker Ended");
             }
 
             _coroutines.Clear();
@@ -180,16 +195,11 @@ namespace Managers
         {
             float timer = (float)interaction.duration * maskDurationScale;
 
-            Debug.Log($"Masker Started for : {timer}");
-
             yield return new WaitForSeconds(timer);
 
             _reductionLevel = NoiseReduced.None;
             OnMaskEnd?.Invoke(interaction);
             StopCoroutine(_coroutines[0]);
-        
-
-            Debug.Log($"Masker Ended");
 
             yield break;
         }
