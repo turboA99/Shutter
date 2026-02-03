@@ -1,10 +1,31 @@
 using Interactions;
 using Managers;
-using UnityEngine;
 
 public class Frog2 : Interactable
 {
-    private bool isIdle = true;
+    bool isIdle = true;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+
+        AwarenessManager.instance.OnMaskEnd.AddListener(ReturnBase);
+        AwarenessManager.instance.OnMaskStart.AddListener(MaskStarted);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    void OnEnable()
+    {
+        isIdle = true;
+        mainSprite.sprite = interactions[1].newSprite;
+        outlineSprite.sprite = interactions[1].newOutline;
+    }
 
     public override void DecideInteraction()
     {
@@ -55,27 +76,5 @@ public class Frog2 : Interactable
             mainSprite.sprite = interactions[1].newSprite;
             outlineSprite.sprite = interactions[1].newOutline;
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-
-        AwarenessManager.instance.OnMaskEnd.AddListener(ReturnBase);
-        AwarenessManager.instance.OnMaskStart.AddListener(MaskStarted);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnEnable()
-    {
-        isIdle = true;
-        mainSprite.sprite = interactions[1].newSprite;
-        outlineSprite.sprite = interactions[1].newOutline;
     }
 }

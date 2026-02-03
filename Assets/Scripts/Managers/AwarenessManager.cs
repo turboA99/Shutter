@@ -11,40 +11,51 @@ namespace Managers
     {
         public static AwarenessManager instance;
         [SerializeField] Flash flash;
-        [SerializeField] private float maskDurationScale = 3f;
 
-        private Interaction _currentMaskInteraction;
-        private NoiseReduced _reductionLevel = NoiseReduced.None;
-        private NoiseLevel _constantNoiseLevel = NoiseLevel.VeryLow;
+        [SerializeField]
+        float maskDurationScale = 3f;
 
-        private List<IEnumerator> _coroutines = new();
+        [SerializeField]
+        float minAwareness;
 
-        [SerializeField] private float minAwareness = 0;
-        [SerializeField] private float maxAwareness = 100;
-        [SerializeField] private float starterAwareness = 0;
-        [SerializeField] private float awarenessMultiplier = 2;
-        [SerializeField] private float reductionMultiplier = 2;
-        [SerializeField] private float reductionIncreaserMultiplier = 0;
-        [SerializeField] private float repeatedPenaltyMult = 1;
-        [SerializeField] private int maxRepeatsChecked = 5;
+        [SerializeField]
+        float maxAwareness = 100;
 
-        float awarness;
+        [SerializeField]
+        float starterAwareness;
 
-        float Awareness
-        {
-            get => awarness;
-            set => awarness = value;
-        }
+        [SerializeField]
+        float awarenessMultiplier = 2;
 
-        private List<InteractableObject> _sources = new();
+        [SerializeField]
+        float reductionMultiplier = 2;
+
+        [SerializeField]
+        float reductionIncreaserMultiplier;
+
+        [SerializeField]
+        float repeatedPenaltyMult = 1;
+
+        [SerializeField]
+        int maxRepeatsChecked = 5;
 
         public UnityEvent<float> OnAwarenessChange;
         public UnityEvent OnAwarenessFilled;
 
         public UnityEvent<Interaction> OnMaskStart;
         public UnityEvent<Interaction> OnMaskEnd;
+        readonly NoiseLevel _constantNoiseLevel = NoiseLevel.VeryLow;
 
-        private void Awake()
+        readonly List<IEnumerator> _coroutines = new();
+
+        Interaction _currentMaskInteraction;
+        NoiseReduced _reductionLevel = NoiseReduced.None;
+
+        readonly List<InteractableObject> _sources = new();
+
+        float Awareness { get; set; }
+
+        void Awake()
         {
             if (instance == null)
             {
@@ -97,7 +108,7 @@ namespace Managers
             CheckAwareness();
         }
 
-        private void IncreaseAwarenessPerFrame(float increase)
+        void IncreaseAwarenessPerFrame(float increase)
         {
             Awareness = Mathf.Clamp(Awareness + increase * Time.deltaTime, minAwareness, maxAwareness);
             OnAwarenessChange?.Invoke(Awareness);
@@ -143,9 +154,9 @@ namespace Managers
 
         public float DecideAwarenessDecrease(NoiseReduced reduction)
         {
-            int amountPrevious = 0;
+            var amountPrevious = 0;
 
-            foreach (var interactable in _sources)
+            foreach (InteractableObject interactable in _sources)
             {
                 if (interactable == _currentMaskInteraction.interactedObject)
                 {
@@ -171,12 +182,12 @@ namespace Managers
             IncreaseAwareness(interaction.noiseLevel);
         }
 
-        private void MaskSound(Interaction interaction)
+        void MaskSound(Interaction interaction)
         {
             _currentMaskInteraction = interaction;
             _reductionLevel = _currentMaskInteraction.reductionLevel;
 
-            foreach (var coroutine in _coroutines)
+            foreach (IEnumerator coroutine in _coroutines)
             {
                 StopCoroutine(coroutine);
                 _coroutines.Remove(TimeMask(interaction));
@@ -193,7 +204,7 @@ namespace Managers
 
         IEnumerator TimeMask(Interaction interaction)
         {
-            float timer = (float)interaction.duration * maskDurationScale;
+            var timer = (float)interaction.duration * maskDurationScale;
 
             yield return new WaitForSeconds(timer);
 

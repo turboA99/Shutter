@@ -5,21 +5,23 @@ namespace Utils
 {
     public class SimpleAnimation
     {
-        public AnimationState AnimationState { get; private set; } = AnimationState.NotStarted;
-        public Action OnAnimationFinished;
-        public bool IsPlaying => AnimationState != AnimationState.NotStarted;
+        readonly float _animationDuration;
+        readonly Action<float> _animationFunction;
 
         float _animationStartTime = Time.time;
-        readonly float _animationDuration;
         float _currentlyPlayed;
-        readonly Action<float> _animationFunction;
-        
+        public Action OnAnimationFinished;
+
         public SimpleAnimation(float animationDuration, Action<float> animationFunction, Action onAnimationFinished = null)
         {
             _animationFunction = animationFunction;
             _animationDuration = animationDuration;
             OnAnimationFinished = onAnimationFinished;
         }
+
+        public AnimationState AnimationState { get; private set; } = AnimationState.NotStarted;
+
+        public bool IsPlaying => AnimationState != AnimationState.NotStarted;
 
         public void Play()
         {
@@ -48,14 +50,14 @@ namespace Utils
             _animationStartTime = Time.time;
             _currentlyPlayed = 0;
         }
-        
+
         public void Update()
         {
             switch (AnimationState)
             {
                 case AnimationState.Playing:
                     _currentlyPlayed = Time.time - _animationStartTime;
-                    var progress = Mathf.Clamp(_currentlyPlayed /_animationDuration, 0f, 1f);
+                    var progress = Mathf.Clamp(_currentlyPlayed / _animationDuration, 0f, 1f);
                     _animationFunction?.Invoke(progress);
                     if (progress >= 1f)
                     {
@@ -65,6 +67,7 @@ namespace Utils
                     break;
             }
         }
+
         public void PauseAndReset()
         {
             Pause();
@@ -76,6 +79,6 @@ namespace Utils
         NotStarted,
         Playing,
         Paused,
-        Finished
+        Finished,
     }
 }

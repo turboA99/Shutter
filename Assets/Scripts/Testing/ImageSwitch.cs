@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using UnityEngine.UI;
 
 namespace Testing
 {
@@ -9,13 +8,16 @@ namespace Testing
     {
         [SerializeField]
         InputAction inputActionPrevious;
+
         [SerializeField]
         InputAction inputActionNext;
+
         [SerializeField]
         List<Sprite> images;
 
+        int _currentImageIndex;
+
         SpriteRenderer _image;
-        int _currentImageIndex = 0;
 
         void Awake()
         {
@@ -28,7 +30,7 @@ namespace Testing
                 if (context.ReadValueAsButton())
                 {
                     _currentImageIndex++;
-                    if (_currentImageIndex >= images.Count)  _currentImageIndex = 0;
+                    if (_currentImageIndex >= images.Count) _currentImageIndex = 0;
                     _image.sprite = images[_currentImageIndex];
                 }
             };
@@ -38,7 +40,7 @@ namespace Testing
                 if (context.ReadValueAsButton())
                 {
                     _currentImageIndex++;
-                    if (_currentImageIndex >= images.Count)  _currentImageIndex = 0;
+                    if (_currentImageIndex >= images.Count) _currentImageIndex = 0;
                     _image.sprite = images[_currentImageIndex];
                 }
             };

@@ -1,10 +1,20 @@
 using Interactions;
 using Managers;
-using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEngine;
 
 public class Tree : Interactable
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     public override void DecideInteraction()
     {
         switch (InventoryManager.instance.GetItem())
@@ -25,17 +35,5 @@ public class Tree : Interactable
             mainSprite.sprite = interaction.newSprite;
             outlineSprite.sprite = interaction.newOutline;
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

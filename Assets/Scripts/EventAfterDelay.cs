@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
@@ -21,7 +20,7 @@ public class EventAfterDelay : MonoBehaviour
         StartCoroutine(TriggerCoroutine());
         _wasTriggered = true;
     }
-    
+
     IEnumerator TriggerCoroutine()
     {
         yield return new WaitForSeconds(delay);

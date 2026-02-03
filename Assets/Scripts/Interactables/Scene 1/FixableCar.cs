@@ -4,13 +4,24 @@ using UnityEngine;
 
 public class FixableCar : Interactable
 {
-    private bool hasGas = false;
-    private bool hasSpark = false;
-    private bool hasTire = false;
-    private bool isLifted = false;
-
     [SerializeField] string baseInspection = "I can use this car to escape. It's missing";
-    
+    bool hasGas;
+    bool hasSpark;
+    bool hasTire;
+    bool isLifted;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
     public override void DecideInteraction()
     {
         switch (InventoryManager.instance.GetItem())
@@ -46,7 +57,7 @@ public class FixableCar : Interactable
                     {
                         newInteraction.characterThoughts += ", a tire";
                     }
-                    else if(!hasTire)
+                    else if (!hasTire)
                     {
                         newInteraction.characterThoughts += " a tire";
                     }
@@ -94,17 +105,5 @@ public class FixableCar : Interactable
             mainSprite.sprite = interaction.newSprite;
             outlineSprite.sprite = interaction.newOutline;
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

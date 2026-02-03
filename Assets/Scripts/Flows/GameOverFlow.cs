@@ -10,10 +10,11 @@ namespace Flows
     {
         [FormerlySerializedAs("gameOverEvenets")]
         [SerializeField] UnityEvent gameOverEvents;
+
         [SerializeField] Button buttonRestart;
         [SerializeField] Button buttonMainMenu;
-        
-        bool _wasTriggered = false;
+
+        bool _wasTriggered;
 
         void Awake()
         {

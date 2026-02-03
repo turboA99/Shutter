@@ -5,17 +5,46 @@ using UnityEngine;
 
 public class Window : Interactable
 {
-    private bool isIdle = true;
-    [SerializeField] private Sprite closedFrame;
-    [SerializeField] private Sprite closedHighlight;
-    [SerializeField] private Sprite middleFrame;
-    [SerializeField] private Sprite middleHighlight;
-    [SerializeField] private Sprite lastFrame;
-    [SerializeField] private Sprite lastHighlight;
-    [SerializeField] private float timeBetweenFrameS;
+    [SerializeField]
+    Sprite closedFrame;
 
-    private Coroutine startAnimation;
-    private Coroutine reverseAnimation;
+    [SerializeField]
+    Sprite closedHighlight;
+
+    [SerializeField]
+    Sprite middleFrame;
+
+    [SerializeField]
+    Sprite middleHighlight;
+
+    [SerializeField]
+    Sprite lastFrame;
+
+    [SerializeField]
+    Sprite lastHighlight;
+
+    [SerializeField]
+    float timeBetweenFrameS;
+
+    bool isIdle = true;
+    Coroutine reverseAnimation;
+
+    Coroutine startAnimation;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+        AwarenessManager.instance.OnMaskEnd.AddListener(MaskEnded);
+    }
+
+    void OnDisable()
+    {
+        isIdle = true;
+        mainSprite.sprite = closedFrame;
+        outlineSprite.sprite = closedHighlight;
+    }
+
     public override void DecideInteraction()
     {
         switch (InventoryManager.instance.GetItem())
@@ -41,13 +70,6 @@ public class Window : Interactable
             mainSprite.sprite = interaction.newSprite;
             outlineSprite.sprite = interaction.newOutline;
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-        AwarenessManager.instance.OnMaskEnd.AddListener(MaskEnded);
     }
 
     public void MaskEnded(Interaction interaction)
@@ -79,12 +101,5 @@ public class Window : Interactable
         outlineSprite.sprite = closedHighlight;
 
         yield break;
-    }
-
-    private void OnDisable()
-    {
-        isIdle = true;
-        mainSprite.sprite = closedFrame;
-        outlineSprite.sprite = closedHighlight;
     }
 }

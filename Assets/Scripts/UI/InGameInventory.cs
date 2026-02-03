@@ -1,4 +1,3 @@
-using System;
 using Interactions;
 using UnityEngine;
 using UnityEngine.UI;
@@ -28,6 +27,5 @@ namespace UI
                     break;
             }
         }
-        
     }
 }

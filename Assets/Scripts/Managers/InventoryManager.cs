@@ -7,9 +7,9 @@ namespace Managers
     {
         public static InventoryManager instance;
 
-        private InventoryItem currentItem = InventoryItem.Empty;
+        InventoryItem currentItem = InventoryItem.Empty;
 
-        private void Awake()
+        void Awake()
         {
             instance = this;
         }

@@ -1,5 +1,4 @@
 using System.Collections;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -12,31 +11,37 @@ namespace UI
     public class Flash : MonoBehaviour
     {
         [Header("Flash")]
-        [SerializeField] private float cooldown;
+        [SerializeField]
+        float cooldown;
+
         [Header("Animation")]
         [SerializeField]
         float flashInDuration = .1f;
+
         [SerializeField]
         float flashOutDuration = 1f;
+
         [SerializeField]
         float fadeOutDuration = 5f;
+
         [SerializeField]
         Color darknessColor = Color.black;
+
         [SerializeField]
         Color semiDarkColor = new(0f, 0f, 0f, .4f);
-        
+
         public UnityEvent OnFlash;
-    
+
+        bool _canFlash = true;
+        SimpleAnimation _fadeOut;
+
         SimpleAnimation _flashIn;
         SimpleAnimation _flashOut;
-        SimpleAnimation _fadeOut;
         Image _image;
-        
-        bool _canFlash = true;
 
         void Awake()
         {
-            _image  =  GetComponent<Image>();
+            _image = GetComponent<Image>();
             _flashIn = new SimpleAnimation(
                 flashInDuration,
                 progress => _image.color = Color.Lerp(darknessColor, Color.white, progress),
@@ -57,15 +62,7 @@ namespace UI
             _fadeOut = new SimpleAnimation(
                 fadeOutDuration,
                 progress => _image.color = Color.Lerp(semiDarkColor, darknessColor, Easing.OutCirc(progress)),
-                () =>
-                {
-                    _fadeOut.Reset();
-                });
-        }
-
-        void OnEnable()
-        {
-            _image.color = darknessColor;
+                () => { _fadeOut.Reset(); });
         }
 
         void Update()
@@ -73,6 +70,11 @@ namespace UI
             if (_flashIn.IsPlaying) _flashIn.Update();
             if (_flashOut.IsPlaying) _flashOut.Update();
             if (_fadeOut.IsPlaying) _fadeOut.Update();
+        }
+
+        void OnEnable()
+        {
+            _image.color = darknessColor;
         }
 
         public void DoFlash()

@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Interactions;
 using Managers;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.EventSystems;
@@ -22,14 +21,15 @@ public abstract class Interactable : MonoBehaviour, IPointerClickHandler, IPoint
         InteractionManager.instance.OnInteractionDecided.AddListener(Interacted);
     }
 
+    void OnDestroy()
+    {
+        OnInteractionStarted.RemoveAllListeners();
+        InteractionManager.instance.OnInteractionDecided.RemoveListener(Interacted);
+    }
+
     public void OnPointerClick(PointerEventData eventData)
     {
         DecideInteraction();
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        outlineSprite.gameObject.SetActive(false);
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -37,10 +37,9 @@ public abstract class Interactable : MonoBehaviour, IPointerClickHandler, IPoint
         outlineSprite.gameObject.SetActive(true);
     }
 
-    private void OnDestroy()
+    public void OnPointerExit(PointerEventData eventData)
     {
-        OnInteractionStarted.RemoveAllListeners();
-        InteractionManager.instance.OnInteractionDecided.RemoveListener(Interacted);
+        outlineSprite.gameObject.SetActive(false);
     }
 
     public abstract void DecideInteraction();

@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class AwarenessBar : MonoBehaviour
 {
-    [SerializeField] private Image bar;
+    [SerializeField]
+    Image bar;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +16,7 @@ public class AwarenessBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void UpdateBar(float newValue)

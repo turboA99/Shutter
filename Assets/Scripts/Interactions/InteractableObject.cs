@@ -16,6 +16,6 @@
         Window,
         ToolBox,
         Carjack,
-        SpareTire
+        SpareTire,
     }
 }

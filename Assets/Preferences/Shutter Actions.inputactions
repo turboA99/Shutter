@@ -19,7 +19,7 @@
                     "name": "Submit",
                     "type": "Button",
                     "id": "11dddf15-5d12-4ee6-92c1-d27d4ac1dab6",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -28,7 +28,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "111e25ff-1b9b-4f5d-ab15-816436b5fa94",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -52,7 +52,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ScrollWheel",
+                    "name": "Scroll",
                     "type": "PassThrough",
                     "id": "b87eb5bc-91b9-4b28-92af-4d28c7704e45",
                     "expectedControlType": "Vector2",
@@ -204,7 +204,7 @@
                 {
                     "name": "",
                     "id": "9e92bb26-7e3b-4ec4-b06b-3c8f8e498ddc",
-                    "path": "*/{Submit}",
+                    "path": "<Keyboard>/space",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR;Xbox Controller;Playstation Controller",
@@ -214,11 +214,44 @@
                 },
                 {
                     "name": "",
-                    "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
-                    "path": "*/{Cancel}",
+                    "id": "a5bebadd-8cff-47aa-aa0c-db909ed200f9",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard&Mouse;Gamepad;Touch;Joystick;XR;Xbox Controller;Playstation Controller",
+                    "groups": ";Keyboard&Mouse",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "fa16961e-855a-410e-8108-74929ba2c94e",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Xbox Controller;Playstation Controller",
+                    "action": "Submit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "82627dcc-3b13-4ba9-841d-e4b746d6553e",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse;Touch;Joystick;XR",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "42bb923e-cbda-432f-8976-efd1ab5d15eb",
+                    "path": "<Gamepad>/rightStick/down",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Gamepad;Xbox Controller;Playstation Controller",
                     "action": "Cancel",
                     "isComposite": false,
                     "isPartOfComposite": false
@@ -226,7 +259,7 @@
                 {
                     "name": "",
                     "id": "c52c8e0b-8179-41d3-b8a1-d149033bbe86",
-                    "path": "<Mouse>/{Point}",
+                    "path": "<Pointer>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse;Gamepad;Xbox Controller;Playstation Controller",
@@ -237,7 +270,7 @@
                 {
                     "name": "",
                     "id": "4faf7dc9-b979-4210-aa8c-e808e1ef89f5",
-                    "path": "<Mouse>/leftButton",
+                    "path": "<Pointer>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Gamepad;Xbox Controller;Playstation Controller",
@@ -252,7 +285,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse;Gamepad;Xbox Controller;Playstation Controller",
-                    "action": "ScrollWheel",
+                    "action": "Scroll",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -321,7 +354,7 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Virtual Mouse Stick",
+                    "name": "Virtual Mouse Move",
                     "type": "Value",
                     "id": "a14017c8-8bc6-4f1a-bbef-68e968eda1a2",
                     "expectedControlType": "Vector2",
@@ -337,39 +370,26 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Virtual Mouse Scroll",
+                    "type": "Value",
+                    "id": "07186135-c964-4b00-835f-a09975c10d58",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
                 }
             ],
             "bindings": [
                 {
                     "name": "",
-                    "id": "ed93b65d-ea59-4d20-a467-9834d6282451",
-                    "path": "<Mouse>/{Point}",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse;Gamepad;Xbox Controller;Playstation Controller",
-                    "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "3786ebca-b5c9-436b-909d-52130d1f4bb2",
-                    "path": "<VirtualMouse>/position",
+                    "id": "cd56df4f-795b-4688-a7de-2f66b4d70a25",
+                    "path": "<Pointer>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Point",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "7a5b8579-0695-4c56-a429-5c06fd1f02e3",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Click",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -380,7 +400,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Gamepad;Xbox Controller;Playstation Controller",
-                    "action": "Virtual Mouse Stick",
+                    "action": "Virtual Mouse Move",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -438,6 +458,28 @@
                     "action": "Flash",
                     "isComposite": false,
                     "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "b2d1f77e-018e-49f4-be33-7f9b1a0cda3f",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": ";Playstation Controller;Xbox Controller;Gamepad",
+                    "action": "Virtual Mouse Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "0a43277a-52b4-45ee-82fe-8dad389ce68c",
+                    "path": "<Pointer>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }
@@ -467,6 +509,11 @@
                     "devicePath": "<Gamepad>",
                     "isOptional": false,
                     "isOR": false
+                },
+                {
+                    "devicePath": "<VirtualCursor>",
+                    "isOptional": true,
+                    "isOR": false
                 }
             ]
         },
@@ -480,7 +527,7 @@
                     "isOR": false
                 },
                 {
-                    "devicePath": "<VirtualMouse>",
+                    "devicePath": "<VirtualCursor>",
                     "isOptional": true,
                     "isOR": false
                 }
@@ -496,8 +543,8 @@
                     "isOR": false
                 },
                 {
-                    "devicePath": "<VirtualMouse>",
-                    "isOptional": false,
+                    "devicePath": "<VirtualCursor>",
+                    "isOptional": true,
                     "isOR": false
                 }
             ]

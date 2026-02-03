@@ -1,11 +1,16 @@
 using Interactions;
 using Managers;
-using UnityEngine;
 
 public class GasCan : Interactable
 {
-    private bool isFunneled = false;
-    private bool isUsed = false;
+    bool isFunneled;
+    bool isUsed;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+    }
 
     public override void DecideInteraction()
     {
@@ -44,12 +49,4 @@ public class GasCan : Interactable
             outlineSprite.sprite = interaction.newOutline;
         }
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-    }
-
-    
 }

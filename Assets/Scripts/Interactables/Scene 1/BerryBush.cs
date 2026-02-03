@@ -1,9 +1,14 @@
 using Interactions;
 using Managers;
-using UnityEngine;
 
 public class BerryBush : Interactable
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+    }
+
     public override void DecideInteraction()
     {
         switch (InventoryManager.instance.GetItem())
@@ -31,11 +36,4 @@ public class BerryBush : Interactable
             outlineSprite.sprite = interaction.newOutline;
         }
     }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-    }
 }
-

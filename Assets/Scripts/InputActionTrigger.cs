@@ -1,20 +1,10 @@
 using System;
-using Managers;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.Serialization;
 
 public class InputActionTrigger : MonoBehaviour
 {
-    [Flags] enum ActionType
-    {
-        None,
-        Started,
-        Cancelled,
-        Performed
-    }
-
     [SerializeField] InputActionProperty trigger;
 
     [SerializeField]
@@ -24,14 +14,6 @@ public class InputActionTrigger : MonoBehaviour
 
     void Awake()
     {
-    }
-
-    void OnTriggered(InputAction.CallbackContext context)
-    {
-        if (context.ReadValueAsButton())
-        {
-            eventToTrigger?.Invoke();
-        }
     }
 
     void OnEnable()
@@ -64,5 +46,21 @@ public class InputActionTrigger : MonoBehaviour
         {
             trigger.action.performed -= OnTriggered;
         }
+    }
+
+    void OnTriggered(InputAction.CallbackContext context)
+    {
+        if (context.ReadValueAsButton())
+        {
+            eventToTrigger?.Invoke();
+        }
+    }
+
+    [Flags] enum ActionType
+    {
+        None,
+        Started,
+        Cancelled,
+        Performed,
     }
 }

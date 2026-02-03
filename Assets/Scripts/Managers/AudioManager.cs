@@ -5,13 +5,18 @@ namespace Managers
 {
     public class AudioManager : MonoBehaviour
     {
-        [SerializeField] private AudioSource interactableSource;
-        [SerializeField] private AudioSource maskerSource;
-        [SerializeField] private AudioSource ambientSource;
-
         public static AudioManager instance;
 
-        private void Awake()
+        [SerializeField]
+        AudioSource interactableSource;
+
+        [SerializeField]
+        AudioSource maskerSource;
+
+        [SerializeField]
+        AudioSource ambientSource;
+
+        void Awake()
         {
             instance = this;
         }
@@ -27,7 +32,7 @@ namespace Managers
         // Update is called once per frame
         void Update()
         {
-        
+
         }
 
         public void Interacted(Interaction interaction)

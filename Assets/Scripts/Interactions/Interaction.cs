@@ -11,8 +11,7 @@ namespace Interactions
         public Sprite newOutline;
         public Sprite inventorySprite;
         public string characterThoughts;
-        [CanBeNull] public InventoryItem newItem;
-        public bool takeItem;
+        public InventoryItem newItem;
         public NoiseLevel noiseLevel;
         public AudioClip clipToPlay;
         public NoiseReduced reductionLevel;
@@ -24,7 +23,7 @@ namespace Interactions
         None,
         Low,
         Medium,
-        High
+        High,
     }
 
     public enum ReductionDuration
@@ -32,6 +31,6 @@ namespace Interactions
         None,
         Short,
         Medium,
-        Long
+        Long,
     }
 }

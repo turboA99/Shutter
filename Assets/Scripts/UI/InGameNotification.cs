@@ -43,10 +43,16 @@ namespace UI
                 });
         }
 
-        IEnumerator WaitAndFadeOut()
+        void Update()
         {
-            yield return new WaitForSeconds(showDuration);
-            _fadeOut.Play();
+            if (_fadeIn.IsPlaying)
+            {
+                _fadeIn.Update();
+            }
+            if (_fadeOut.IsPlaying)
+            {
+                _fadeOut.Update();
+            }
         }
 
 
@@ -60,22 +66,16 @@ namespace UI
             Destroy(gameObject);
         }
 
-        void Update()
+        IEnumerator WaitAndFadeOut()
         {
-            if (_fadeIn.IsPlaying)
-            {
-                _fadeIn.Update();
-            }
-            if (_fadeOut.IsPlaying)
-            {
-                _fadeOut.Update();
-            }
+            yield return new WaitForSeconds(showDuration);
+            _fadeOut.Play();
         }
 
         public void Initialize(Notification notification, Action onDestroyed)
         {
             _onDestroyed = onDestroyed;
-            foreach (var visualElement in visualElements)
+            foreach (Graphic visualElement in visualElements)
             {
                 _rememberColor.Add(visualElement, visualElement.color);
             }

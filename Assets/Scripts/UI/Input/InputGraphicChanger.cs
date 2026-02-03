@@ -1,8 +1,5 @@
-using System;
+using Input;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.InputSystem.Utilities;
 using UnityEngine.UI;
 
 namespace UI.Input
@@ -14,33 +11,25 @@ namespace UI.Input
         [SerializeField] Sprite xboxSprite;
         [SerializeField] Sprite playstationSprite;
         [SerializeField] Sprite gamepadSprite;
-    
-        PlayerInput _playerInput;
-        Image _image;
-        string _rememberControlScheme;
 
-        IDisposable _disposable;
+        Image _image;
+
         // Start is called once before the first execution of Update after the MonoBehaviour is created
 
         void Awake()
         {
             _image = GetComponent<Image>();
-            _playerInput = FindAnyObjectByType<PlayerInput>();
-            if (!_playerInput) throw new Exception("No PlayerInput found in scene");
-            _rememberControlScheme = _playerInput.currentControlScheme;
+            ControlSchemeChangeObserver.OnControlSchemeChangedEvent += OnControlSchemeChanged;
         }
 
-        void OnEvent(InputEventPtr _)
+        void OnEnable()
         {
-            if (_playerInput.currentControlScheme == _rememberControlScheme) return;
-        
-            _rememberControlScheme = _playerInput.currentControlScheme;
-            SwitchGraphic();
+            OnControlSchemeChanged(ControlSchemeChangeObserver.GetCurrentControlScheme());
         }
 
-        void SwitchGraphic()
+        void OnControlSchemeChanged(string controlScheme)
         {
-            switch (_playerInput.currentControlScheme)
+            switch (controlScheme)
             {
                 case "Keyboard&Mouse":
                     _image.sprite = keyboardMouseSprite;
@@ -55,17 +44,6 @@ namespace UI.Input
                     _image.sprite = gamepadSprite;
                     break;
             }
-        }
-
-        void OnEnable()
-        {
-            SwitchGraphic();
-            _disposable = InputSystem.onEvent.Call(OnEvent);
-        }
-    
-        void OnDisable()
-        {
-            _disposable.Dispose();
         }
     }
 }

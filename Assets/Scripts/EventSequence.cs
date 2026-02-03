@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,9 +7,14 @@ public class EventSequence : MonoBehaviour
     public List<UnityEvent> EventSequenceEvents = new();
     public UnityEvent OnEventSequenceFinished;
     public UnityEvent OnStepCompleted;
-    
+
     int _currentEventIndex = -1;
-    
+
+    void Start()
+    {
+
+    }
+
     public void Advance()
     {
         _currentEventIndex++;
@@ -25,10 +29,5 @@ public class EventSequence : MonoBehaviour
         {
             OnEventSequenceFinished?.Invoke();
         }
-    }
-
-    void Start()
-    {
-        
     }
 }

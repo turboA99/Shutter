@@ -13,39 +13,48 @@ namespace Effects
         {
             Letter,
             Word,
-            Line
+            Line,
         }
+
         [Header("Text Animation")]
         [SerializeField] TextAppearType textAppearType = TextAppearType.Letter;
+
         [SerializeField] [Tooltip("The time fir one character to be put on screen")]
         float characterTypeTime = .25f;
+
         [SerializeField] [Tooltip("The time fir one character to be put on screen")]
         float wordTypeTime = 1.5f;
+
         [SerializeField] [Tooltip("The time fir one character to be put on screen")]
         float lineTypeTime = 4f;
+
         [Tooltip("Called when the text fully appeared")]
         [Header("Events")]
         public UnityEvent OnAnimationFinished;
+
         [Header("Sound")]
         [SerializeField] [Tooltip("The sound played typing")]
         AudioClip typingSound;
+
         [SerializeField] [Tooltip("The frequency of typing sound being played")]
         int playFrequency = 2;
 
-        TextMeshProUGUI _tmpText;
+        SimpleAnimation _animation;
+        float _animationDuration;
         AudioSource _audioSource;
+        int _rememberFrequencyIndex;
         TMP_TextInfo _rememberInfo;
 
-        float _characterCount => _rememberInfo.characterCount;
-        float _wordCount => _rememberInfo.wordCount;
-        float _lineCount => _rememberInfo.lineCount;
-        float _animationDuration;
-    
 
         string _text;
-        int _rememberFrequencyIndex;
 
-        SimpleAnimation _animation;
+        TextMeshProUGUI _tmpText;
+
+        float _characterCount => _rememberInfo.characterCount;
+
+        float _wordCount => _rememberInfo.wordCount;
+
+        float _lineCount => _rememberInfo.lineCount;
 
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Awake()
@@ -60,48 +69,60 @@ namespace Effects
                 case TextAppearType.Letter:
                     _tmpText.maxVisibleCharacters = 0;
                     _animationDuration = _characterCount * characterTypeTime;
-                    _animation = new SimpleAnimation(_animationDuration, progress =>
-                    {
-                        var lastCharIndex = (int)(progress * _characterCount); 
-                        if (typingSound && _tmpText.maxVisibleCharacters >= playFrequency + _rememberFrequencyIndex)
+                    _animation = new SimpleAnimation(_animationDuration,
+                        progress =>
                         {
-                            _rememberFrequencyIndex = lastCharIndex;
-                            _audioSource.PlayOneShot(typingSound);
-                        }
-                        _tmpText.maxVisibleCharacters = lastCharIndex;
-                    }, OnAnimationFinished.Invoke);
+                            var lastCharIndex = (int)(progress * _characterCount);
+                            if (typingSound && _tmpText.maxVisibleCharacters >= playFrequency + _rememberFrequencyIndex)
+                            {
+                                _rememberFrequencyIndex = lastCharIndex;
+                                _audioSource.PlayOneShot(typingSound);
+                            }
+                            _tmpText.maxVisibleCharacters = lastCharIndex;
+                        },
+                        OnAnimationFinished.Invoke);
                     break;
                 case TextAppearType.Word:
                     _tmpText.maxVisibleWords = 0;
                     _animationDuration = _wordCount * wordTypeTime;
-                    _animation = new SimpleAnimation(_animationDuration, progress =>
-                    {
-                        var lastWorldIndex = (int)(progress * _wordCount); 
-                        if (typingSound && _tmpText.maxVisibleWords >= playFrequency + _rememberFrequencyIndex)
+                    _animation = new SimpleAnimation(_animationDuration,
+                        progress =>
                         {
-                            _rememberFrequencyIndex = lastWorldIndex;
-                            _audioSource.PlayOneShot(typingSound);
-                        }
-                        _tmpText.maxVisibleWords = lastWorldIndex;
-                    }, OnAnimationFinished.Invoke);
+                            var lastWorldIndex = (int)(progress * _wordCount);
+                            if (typingSound && _tmpText.maxVisibleWords >= playFrequency + _rememberFrequencyIndex)
+                            {
+                                _rememberFrequencyIndex = lastWorldIndex;
+                                _audioSource.PlayOneShot(typingSound);
+                            }
+                            _tmpText.maxVisibleWords = lastWorldIndex;
+                        },
+                        OnAnimationFinished.Invoke);
                     break;
                 case TextAppearType.Line:
                     _tmpText.maxVisibleLines = 0;
                     _animationDuration = _lineCount * lineTypeTime;
-                    _animation = new SimpleAnimation(_animationDuration, progress =>
-                    {
-                        var lastLineIndex = (int)(progress * _lineCount); 
-                        if (typingSound && _tmpText.maxVisibleLines >= playFrequency + _rememberFrequencyIndex)
+                    _animation = new SimpleAnimation(_animationDuration,
+                        progress =>
                         {
-                            _rememberFrequencyIndex = lastLineIndex;
-                            _audioSource.PlayOneShot(typingSound);
-                        }
-                        _tmpText.maxVisibleLines = lastLineIndex;
-                    }, OnAnimationFinished.Invoke);
+                            var lastLineIndex = (int)(progress * _lineCount);
+                            if (typingSound && _tmpText.maxVisibleLines >= playFrequency + _rememberFrequencyIndex)
+                            {
+                                _rememberFrequencyIndex = lastLineIndex;
+                                _audioSource.PlayOneShot(typingSound);
+                            }
+                            _tmpText.maxVisibleLines = lastLineIndex;
+                        },
+                        OnAnimationFinished.Invoke);
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+            if (_animation.IsPlaying) _animation.Update();
         }
 
         void OnEnable()
@@ -113,12 +134,6 @@ namespace Effects
         void OnDisable()
         {
             _animation.PauseAndReset();
-        }
-
-        // Update is called once per frame
-        void Update()
-        {
-            if (_animation.IsPlaying) _animation.Update();
         }
     }
 }

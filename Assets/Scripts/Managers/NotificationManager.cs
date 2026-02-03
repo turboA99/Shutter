@@ -1,28 +1,25 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using Interactions;
 using TMPro;
 using UI;
 using UnityEngine;
-using Object = System.Object;
 
 namespace Managers
 {
     public class NotificationManager : MonoBehaviour
     {
+        const int maxNotificationsShown = 1;
         [SerializeField] TextMeshPro _helperText;
-        [SerializeField] const int maxNotificationsShown = 1;
         [SerializeField] GameObject notificationPrefab;
         [SerializeField] RectTransform notificationsParent;
         [SerializeField] float durationPerWord = .2f;
         [SerializeField] float notificationCooldown = 1f;
-
-        Notification[] _notifications;
-        Queue<Notification> _notificationQueue = new();
         bool[] _isFreeSpots;
         float _notificationHeight;
+        readonly Queue<Notification> _notificationQueue = new();
+
+        Notification[] _notifications;
 
         public static NotificationManager Instance { get; private set; }
 
@@ -48,7 +45,7 @@ namespace Managers
         bool TryGetFreeSpot(out int index)
         {
             index = 0;
-            for (int i = 0; i < maxNotificationsShown; i++)
+            for (var i = 0; i < maxNotificationsShown; i++)
             {
                 if (_isFreeSpots[i])
                 {
@@ -62,7 +59,7 @@ namespace Managers
 
         Vector2 GetNotificationPositionOnIndex(int index)
         {
-            var position = Vector2.zero;
+            Vector2 position = Vector2.zero;
             position.y -= index * _notificationHeight + _notificationHeight / 2f;
             return position;
         }
@@ -72,16 +69,13 @@ namespace Managers
             if (!TryGetFreeSpot(out var spot))
                 return false;
 
-            var notificationInstance = Instantiate(notificationPrefab, notificationsParent);
+            GameObject notificationInstance = Instantiate(notificationPrefab, notificationsParent);
 
             notificationInstance.GetComponent<RectTransform>().anchoredPosition = GetNotificationPositionOnIndex(spot);
-            var inGameNotification = notificationInstance.GetComponent<InGameNotification>();
+            InGameNotification inGameNotification = notificationInstance.GetComponent<InGameNotification>();
             if (!inGameNotification) throw new UnityException("The notification prefab must have the InGameNotification component!");
             inGameNotification.Initialize(notification,
-                () =>
-                {
-                    StartCoroutine(OnNotificationDestroy(spot));
-                });
+                () => { StartCoroutine(OnNotificationDestroy(spot)); });
             inGameNotification.enabled = true;
             return true;
         }
@@ -94,24 +88,23 @@ namespace Managers
         }
 
         /// <summary>
-        /// 
         /// </summary>
         /// <param name="notification"></param>
         /// <returns></returns>
         public bool TryBroadcast(Notification notification)
         {
-            foreach (var notificationShown in _notifications)
+            foreach (Notification notificationShown in _notifications)
             {
                 if (notification == notificationShown) return false;
             }
             if (!TryAddNotification(notification)) _notificationQueue.Enqueue(notification);
-                
+
             return true;
         }
 
         public void Broadcast(string message)
         {
-            var textInfo = _helperText.GetTextInfo(message);
+            TMP_TextInfo textInfo = _helperText.GetTextInfo(message);
             var notification = new Notification(
                 message,
                 durationPerWord * textInfo.wordCount);

@@ -9,15 +9,6 @@ namespace UI
     [RequireComponent(typeof(Image))]
     public class AlertIndicator : MonoBehaviour
     {
-        enum State
-        {
-            None,
-            Low,
-            MediumLow,
-            Medium,
-            TooLoud,
-            Danger
-        }
         [FormerlySerializedAs("shakeLevelTooMuch")]
         [SerializeField]
         Shake shakeLevelTooLoud;
@@ -58,9 +49,9 @@ namespace UI
         float maxLoudness = 100;
 
         float _currentLoudness;
+        State _currentState = State.None;
 
         Image _image;
-        State _currentState = State.None;
 
         void Awake()
         {
@@ -105,7 +96,7 @@ namespace UI
                     _image.sprite = spriteLevelTooLoud;
                     break;
                 case State.Danger:
-                    
+
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
@@ -158,16 +149,26 @@ namespace UI
             {
                 _currentState = State.Medium;
             }
-            else if (progress >= levelTooLoudThreshold &&  progress < levelDangerThreshold)
+            else if (progress >= levelTooLoudThreshold && progress < levelDangerThreshold)
             {
                 _currentState = State.TooLoud;
-            } 
+            }
             else if (progress >= levelDangerThreshold)
             {
                 _currentState = State.Danger;
             }
-            
+
             UpdateSprite();
+        }
+
+        enum State
+        {
+            None,
+            Low,
+            MediumLow,
+            Medium,
+            TooLoud,
+            Danger,
         }
     }
 }

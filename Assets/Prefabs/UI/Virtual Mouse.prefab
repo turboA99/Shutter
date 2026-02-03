@@ -266,13 +266,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 992d0cb3c2c9fb14b94760a5712537c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AutomaticVirtualCursor
-  inputAction: {fileID: -8784545083839296357, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
-  m_CursorMode: 0
-  m_CursorGraphic: {fileID: 980969234230334401}
-  m_CursorTransform: {fileID: 4562699760074160047}
-  m_CursorSpeed: 1600
-  m_ScrollSpeed: 45
-  m_StickAction:
+  cursorGraphic: {fileID: 980969234230334401}
+  cursorTransform: {fileID: 4562699760074160047}
+  cursorSpeed: 1600
+  scrollSpeed: 45
+  stickAction:
     m_UseReference: 1
     m_Action:
       m_Name: Stick
@@ -284,7 +282,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: -2210437109046839774, guid: 72f80c84de8226940b27252cfacaf688, type: 3}
-  m_LeftButtonAction:
+  pressAction:
     m_UseReference: 1
     m_Action:
       m_Name: Left Button
@@ -296,56 +294,8 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 284844042409143040, guid: 72f80c84de8226940b27252cfacaf688, type: 3}
-  m_MiddleButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Middle Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 39ac78de-5f2f-455a-ad92-fd6bbc3c1686
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_RightButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Right Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 5db1e48b-b706-4c2d-9fdf-0f43fe08db90
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_ForwardButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Forward Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: c764dcf3-b1c7-4442-81a7-2c8c58687211
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_BackButtonAction:
-    m_UseReference: 0
-    m_Action:
-      m_Name: Back Button
-      m_Type: 0
-      m_ExpectedControlType: 
-      m_Id: 764cc8df-c123-4ad3-ba09-76a7907c671e
-      m_Processors: 
-      m_Interactions: 
-      m_SingletonActionBindings: []
-      m_Flags: 0
-    m_Reference: {fileID: 0}
-  m_ScrollWheelAction:
-    m_UseReference: 0
+  scrollAction:
+    m_UseReference: 1
     m_Action:
       m_Name: Scroll Wheel
       m_Type: 0
@@ -355,4 +305,4 @@ MonoBehaviour:
       m_Interactions: 
       m_SingletonActionBindings: []
       m_Flags: 0
-    m_Reference: {fileID: 0}
+    m_Reference: {fileID: 4250181125607138418, guid: 72f80c84de8226940b27252cfacaf688, type: 3}

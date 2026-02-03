@@ -16,6 +16,6 @@
         Crowbar,
         Funnel,
         Carjack,
-        Tire
+        Tire,
     }
 }

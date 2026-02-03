@@ -1,9 +1,27 @@
 using Interactions;
 using Managers;
-using UnityEngine;
 
 public class TrashCan : Interactable
 {
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+        AwarenessManager.instance.OnMaskEnd.AddListener(MaskEnded);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    void OnDisable()
+    {
+        mainSprite.sprite = interactions[0].newSprite;
+        outlineSprite.sprite = interactions[0].newOutline;
+    }
+
     public override void DecideInteraction()
     {
         switch (InventoryManager.instance.GetItem())
@@ -39,24 +57,5 @@ public class TrashCan : Interactable
             mainSprite.sprite = interactions[0].newSprite;
             outlineSprite.sprite = interactions[0].newOutline;
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-        AwarenessManager.instance.OnMaskEnd.AddListener(MaskEnded);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-        mainSprite.sprite = interactions[0].newSprite;
-        outlineSprite.sprite = interactions[0].newOutline;
     }
 }

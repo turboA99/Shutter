@@ -98,6 +98,18 @@ MonoBehaviour:
           m_StringArgument: Monster Kill
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: AutomaticVirtualCursor, Assembly-CSharp
+        m_MethodName: SetEnabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Monster Kill
+          m_BoolArgument: 0
+        m_CallState: 2
   buttonRestart: {fileID: 628047228629831441}
   buttonMainMenu: {fileID: 4386711229636449882}
 --- !u!114 &8358806475611409345
@@ -449,6 +461,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6221740989742633082, guid: 28148d21a8156c54f84a58e03156d250, type: 3}
+      propertyPath: OnAnimationFinished.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8358806475611409345}
     - target: {fileID: 8535677377415357091, guid: 28148d21a8156c54f84a58e03156d250, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1

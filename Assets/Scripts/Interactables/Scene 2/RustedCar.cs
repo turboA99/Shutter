@@ -1,10 +1,21 @@
 using Interactions;
 using Managers;
-using UnityEngine;
 
 public class RustedCar : Interactable
 {
-    private bool isOpen = false;
+    bool isOpen;
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public override void DecideInteraction()
     {
@@ -37,17 +48,5 @@ public class RustedCar : Interactable
             mainSprite.sprite = interaction.newSprite;
             outlineSprite.sprite = interaction.newOutline;
         }
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

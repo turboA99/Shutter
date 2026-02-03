@@ -1,6 +1,4 @@
 ﻿using System;
-using TMPro;
-using UnityEngine;
 
 public struct Notification : IEquatable<Notification>
 {
@@ -21,7 +19,7 @@ public struct Notification : IEquatable<Notification>
     {
         return Message == other.Message;
     }
-    
+
     public override bool Equals(object obj)
     {
         return obj is Notification other && Equals(other);
@@ -29,7 +27,7 @@ public struct Notification : IEquatable<Notification>
 
     public override int GetHashCode()
     {
-        return (Message != null ? Message.GetHashCode() : 0);
+        return Message != null ? Message.GetHashCode() : 0;
     }
 
     public Notification(string message, float durationOnScreen)

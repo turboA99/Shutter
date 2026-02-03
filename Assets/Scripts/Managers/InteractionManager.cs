@@ -1,7 +1,6 @@
 using Interactions;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.EventSystems;
 
 namespace Managers
 {
@@ -13,7 +12,7 @@ namespace Managers
         public UnityEvent<Interaction> OnInteractionDecided;
         public UnityEvent OnWin;
 
-        private void Awake()
+        void Awake()
         {
             instance = this;
         }
@@ -21,7 +20,7 @@ namespace Managers
         // Start is called once before the first execution of Update after the MonoBehaviour is created
         void Start()
         {
-        
+
         }
 
         public void Interacted(Interaction interaction)
@@ -30,7 +29,7 @@ namespace Managers
             {
                 OnWin?.Invoke();
             }
-            
+
             OnInteractionDecided?.Invoke(interaction);
         }
     }

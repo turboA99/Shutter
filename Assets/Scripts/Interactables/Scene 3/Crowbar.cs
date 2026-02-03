@@ -1,10 +1,22 @@
 using Interactions;
 using Managers;
-using UnityEngine;
 
 public class Crowbar : Interactable
 {
-    private bool isGrabbed = false;
+    bool isGrabbed;
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    new void Start()
+    {
+        base.Start();
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
 
     public override void DecideInteraction()
     {
@@ -31,18 +43,5 @@ public class Crowbar : Interactable
             mainSprite.sprite = interaction.newSprite;
             outlineSprite.sprite = interaction.newOutline;
         }
-    }
-
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    new void Start()
-    {
-        base.Start();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
