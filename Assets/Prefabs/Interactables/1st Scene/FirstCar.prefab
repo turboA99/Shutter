@@ -58,14 +58,14 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 5068670972054603868}
+      addedObject: {fileID: 1851882903125558832}
   m_SourcePrefab: {fileID: 100100000, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
 --- !u!1 &617336850757293352 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4774876705749329651, guid: 5082394df4ca33a4eaaae50d2d302f7b, type: 3}
   m_PrefabInstance: {fileID: 5391650466962371547}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5068670972054603868
+--- !u!114 &1851882903125558832
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -74,10 +74,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 617336850757293352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ac9c9b6e2aeabc46a1840cc044f0753, type: 3}
+  m_Script: {fileID: 11500000, guid: 79a7f59b1f96fdb45b69ef21ae0fbee9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FirstCar
-  thisInteractable: 0
+  thisInteractable: 4
   mainSprite: {fileID: 4078562310873000458}
   outlineSprite: {fileID: 2996666209261054340}
   interactions:

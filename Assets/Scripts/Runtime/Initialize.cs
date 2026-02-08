@@ -1,16 +1,16 @@
 ﻿using Input;
-using UnityEditor;
+using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace Editor
+namespace Runtime
 {
-    [InitializeOnLoad]
-    internal class Initialize
+    internal static class Initialize
     {
-        static Initialize()
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        static void Init()
         {
             InputSystem.RegisterLayout<VirtualCursor>("VirtualCursor");
             InputSystem.RegisterPrecompiledLayout<FastVirtualCursor>(FastVirtualCursor.metadata);
-        }   
+        } 
     }
 }

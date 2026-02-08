@@ -121,19 +121,4 @@ namespace Input
             base.OnStateEvent(eventPtr);
         }
     }
-
-    internal static class Extensions
-    {
-        internal static unsafe void AccumulateValueInEvent(this InputControl<Vector2> control, void* currentStatePtr, InputEventPtr newState)
-        {
-            if (control == null)
-                throw new ArgumentNullException(nameof(control));
-
-            if (!control.ReadUnprocessedValueFromEvent(newState, out Vector2 newValue))
-                return; // Value for the control not contained in the given event.
-
-            Vector2 oldDelta = control.ReadUnprocessedValueFromState(currentStatePtr);
-            control.WriteValueIntoEvent(oldDelta + newValue, newState);
-        }
-    }
 }

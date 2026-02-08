@@ -274,41 +274,13 @@ PrefabInstance:
     - {fileID: 5068670972054603868, guid: ea69f727f50ffbd44b6e9ac1f552fc38, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 617336850757293352, guid: ea69f727f50ffbd44b6e9ac1f552fc38, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7439016509901813548}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea69f727f50ffbd44b6e9ac1f552fc38, type: 3}
 --- !u!4 &194209839800398399 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 716423508490928107, guid: ea69f727f50ffbd44b6e9ac1f552fc38, type: 3}
   m_PrefabInstance: {fileID: 810867494295637460}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &275281602953779452 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 617336850757293352, guid: ea69f727f50ffbd44b6e9ac1f552fc38, type: 3}
-  m_PrefabInstance: {fileID: 810867494295637460}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7439016509901813548
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275281602953779452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 79a7f59b1f96fdb45b69ef21ae0fbee9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FirstCar
-  thisInteractable: 4
-  mainSprite: {fileID: 3736071656826120158}
-  outlineSprite: {fileID: 2510347476709205072}
-  interactions:
-  - {fileID: 11400000, guid: 427352be970544b47b680d7e1db34f12, type: 2}
-  OnInteractionStarted:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!212 &2510347476709205072 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 2996666209261054340, guid: ea69f727f50ffbd44b6e9ac1f552fc38, type: 3}

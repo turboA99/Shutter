@@ -14,10 +14,7 @@ namespace Input
 
         public static event Action<string> OnControlSchemeChangedEvent;
 
-        public static string GetCurrentControlScheme()
-        {
-            return InputUser.all.First().controlScheme.GetValueOrDefault().name;
-        }
+        public static string GetCurrentControlScheme => InputUser.all.FirstOrDefault().controlScheme.GetValueOrDefault().name;
 
         static void OnUserChange(InputUser user, InputUserChange change, InputDevice device)
         {

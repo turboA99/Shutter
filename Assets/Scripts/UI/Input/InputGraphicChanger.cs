@@ -1,3 +1,4 @@
+using System;
 using Input;
 using UnityEngine;
 using UnityEngine.UI;
@@ -19,12 +20,17 @@ namespace UI.Input
         void Awake()
         {
             _image = GetComponent<Image>();
-            ControlSchemeChangeObserver.OnControlSchemeChangedEvent += OnControlSchemeChanged;
         }
 
         void OnEnable()
         {
-            OnControlSchemeChanged(ControlSchemeChangeObserver.GetCurrentControlScheme());
+            ControlSchemeChangeObserver.OnControlSchemeChangedEvent += OnControlSchemeChanged;
+            OnControlSchemeChanged(ControlSchemeChangeObserver.GetCurrentControlScheme);
+        }
+
+        void OnDisable()
+        {
+            ControlSchemeChangeObserver.OnControlSchemeChangedEvent -= OnControlSchemeChanged;
         }
 
         void OnControlSchemeChanged(string controlScheme)

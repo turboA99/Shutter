@@ -8,12 +8,6 @@ public class FirstCar : Interactable
         base.Start();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     public override void DecideInteraction()
     {
         OnInteractionStarted?.Invoke(interactions[0]);

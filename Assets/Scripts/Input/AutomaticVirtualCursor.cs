@@ -49,6 +49,7 @@ public class AutomaticVirtualCursor : MonoBehaviour
     Action<InputAction.CallbackContext> _stickActionTriggeredDelegate;
     bool _wasPressed;
     bool _doEnable = true;
+    bool _isInitialized = false;
 
     public RectTransform CursorTransform
     {
@@ -74,7 +75,7 @@ public class AutomaticVirtualCursor : MonoBehaviour
         set => scrollSpeed = value;
     }
 
-    public VirtualCursor VirtualCursor { get; private set; }
+    public FastVirtualCursor VirtualCursor { get; private set; }
 
     public InputActionProperty StickAction
     {
@@ -108,24 +109,20 @@ public class AutomaticVirtualCursor : MonoBehaviour
         if (!state) Cursor.visible = true;
     }
 
-    void Awake()
+    void Start()
     {
-        InputSystem.RegisterLayout<VirtualCursor>("VirtualCursor");
+        VirtualCursor = InputSystem.AddDevice<FastVirtualCursor>();
+        _isInitialized = true;
+        OnEnable();
+        ControlSchemeChanged(ControlSchemeChangeObserver.GetCurrentControlScheme);
+        ControlSchemeChangeObserver.OnControlSchemeChangedEvent += ControlSchemeChanged;
     }
 
     protected void OnEnable()
     {
+        if (!_isInitialized) return;
         if (!_doEnable) _doEnable = true;
         // Add mouse device.
-        if (VirtualCursor == null)
-        {
-            VirtualCursor = (VirtualCursor)InputSystem.AddDevice("VirtualCursor");
-        }
-        else if (!VirtualCursor.added)
-        {
-            InputSystem.AddDevice(VirtualCursor);
-            VirtualCursor.ConfineToViewport = true;
-        }
 
         _nativePointer = InputSystem.GetDevice<Pointer>();
         if (_nativePointer is not { synthetic: false }) _nativePointer = null;
@@ -149,9 +146,6 @@ public class AutomaticVirtualCursor : MonoBehaviour
             _beforeInputUpdateDelegate = OnBeforeInputUpdate;
         InputSystem.onBeforeUpdate += _beforeInputUpdateDelegate;
 
-        ControlSchemeChangeObserver.OnControlSchemeChangedEvent += ControlSchemeChanged;
-        ControlSchemeChanged(ControlSchemeChangeObserver.GetCurrentControlScheme());
-
         // Hook into actions.
         if (_pressActionTriggeredDelegate == null)
             _pressActionTriggeredDelegate = OnPressActionTriggered;
@@ -169,10 +163,6 @@ public class AutomaticVirtualCursor : MonoBehaviour
 
     protected void OnDisable()
     {
-        // Remove mouse device.
-        if (VirtualCursor != null && VirtualCursor.added)
-            InputSystem.RemoveDevice(VirtualCursor);
-
         // Remove ourselves from input update.
         if (_afterInputUpdateDelegate != null)
             InputSystem.onAfterUpdate -= _afterInputUpdateDelegate;
@@ -194,7 +184,7 @@ public class AutomaticVirtualCursor : MonoBehaviour
         {
             SetActionCallback(stickAction, _stickActionTriggeredDelegate, false);
         }
-        
+
         CursorTransform.gameObject.SetActive(false);
         _lastStickValue = default;
     }
@@ -203,7 +193,7 @@ public class AutomaticVirtualCursor : MonoBehaviour
 
     void ControlSchemeChanged(string controlScheme)
     {
-        if (!enabled) return;
+        if (!_doEnable) return;
         switch (controlScheme)
         {
             case "Keyboard&Mouse":
@@ -211,9 +201,7 @@ public class AutomaticVirtualCursor : MonoBehaviour
                 Cursor.visible = true;
                 enabled = false;
                 break;
-            case "Xbox Controller":
-            case "Playstation Controller":
-            case "Gamepad":
+            case "Xbox Controller" or "Playstation Controller" or "Gamepad":
                 CursorTransform.gameObject.SetActive(true);
                 Cursor.visible = false;
                 enabled = true;
@@ -323,5 +311,11 @@ public class AutomaticVirtualCursor : MonoBehaviour
             VirtualCursor.MoveTo(newPosition);
 
         if (VirtualCursor.press.isPressed != _wasPressed) VirtualCursor.SetPressed(_wasPressed);
+    }
+
+    void OnDestroy()
+    {
+        InputSystem.RemoveDevice(VirtualCursor);
+        ControlSchemeChangeObserver.OnControlSchemeChangedEvent += ControlSchemeChanged;
     }
 }
